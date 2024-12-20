@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="{{ 'search-field.css' | asset_url }}">
+<div class="search-field">
+  <a
+    class="show-search-link"
+    href="{{ routes.search_url }}"
+    aria-label="{{ 'sections.header.search' | t }}">
+    <span class="show-search-link__text">
+      {{- 'sections.header.search' | t -}}
+    </span>
+    <span class="show-search-link__icon">
+      {%- render 'icon-search' -%}
+    </span>
+  </a>
+</div>

@@ -1,0 +1,36 @@
+{% comment %}
+  Parameters:
+  - product {Object} - Product object.
+  - product_form_id {String} - Product form ID.
+  - media_ratio {Number} - Media aspect ratio.
+  - block {Object} - Block object.
+  - dynamic_availability_down_mode {Boolean} - Dynamic availability mode, downwards or from selection.
+
+  Dependencies:
+  - Custom select component
+
+  Usage:
+  {% render 'variant-picker', product: product, product_form_id: product_form_id, block: block %}
+{% endcomment %}
+
+{%- unless product.has_only_default_variant -%}
+  {% assign color_object = shop.metaobjects.spray_colors_collection['store-swatches'].colors.value %}
+  <variant-spray data-target='{{product_form_id}}'>
+    <label class="label" id="{{ option_id }}-label">{{- product.options[0] -}}</label>
+    <div class="grid grid-cols-1 swatch-grid">
+
+      {% if product.metafields.custom.variant_override != blank %}
+            {% for product in product.metafields.custom.variant_override.value.products.value %}
+              {% for variant in product.variants %}
+                {% render 'spray-swatch', variant: variant, color_object: color_object %}
+              {% endfor %}
+            {% endfor %}
+          {% else %}
+          {% for variant in product.variants %}
+            {% render 'spray-swatch', variant: variant, color_object: color_object %}
+          {% endfor %}
+      {% endif %}
+
+    </div>
+  </variant-spray>
+{%- endunless -%}

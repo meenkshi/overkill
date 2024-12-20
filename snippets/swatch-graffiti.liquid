@@ -1,0 +1,112 @@
+<script>
+
+let metaobjectColors = [];
+
+// 2. Define GraphQL input
+const getMetaobjectData  = () => `
+query MetaobjColors{
+  metaobjects(type: "spray_color_combine", first: 250) {
+    edges {
+      node {
+        id
+        fields {
+          value
+          key
+        }
+      }
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}`;
+
+const getMetaobjectDataNext = nextCursor => `
+query MetaobjColors{
+  metaobjects(type: "spray_color_combine", first: 250, after: "${nextCursor}") {
+    edges {
+      node {
+        id
+        fields {
+          value
+          key
+        }
+      }
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}`;
+
+const renderObjects = ({data}) => {
+  data.metaobjects.edges.forEach((obj) => {
+    metaobjectColors.push(obj.node.fields);
+  });
+  if(data.metaobjects.pageInfo.hasNextPage){
+    let nextOptions = createOptionsWithBody(getMetaobjectDataNext(data.metaobjects.pageInfo.endCursor))
+    fetch(`https://overkilltest.myshopify.com/api/graphql`, nextOptions)
+    .then(res => res.json())
+    .then(renderObjects);
+  }else{
+    initializeColors();
+  }
+};
+
+
+  const options = {
+    method: "post",
+    headers: {
+      "Content-Type": "application/graphql",
+      "X-Shopify-Storefront-Access-Token": "1654a28befa5959d0d81871806122fa1"
+    }
+  };
+
+  function createOptionsWithBody(body) {
+    return {
+      ...options,
+      body: body
+    };
+  }
+
+
+  function initializeColors(){
+    let colors = metaobjectColors;
+    colors.forEach((color) => {
+      let colorProp = color[0];
+      let cssProp = color[1];
+      document.documentElement.style.setProperty(`--${handlelize(cssProp.value)}`, colorProp.value);
+    })
+  }
+
+
+  function handlelize (str) {
+
+  str = str.normalize('NFD').replace(/[\u0300-\u036f]/g, '') // Remove accents
+    .replace(/([^\w]+|\s+)/g, '-') // Replace space and other characters by hyphen
+    .replace(/\-\-+/g, '-')	// Replaces multiple hyphens by one hyphen
+    .replace(/(^-+|-+$)/g, '') // Remove extra hyphens from beginning or end of the string
+    .toLowerCase(); // To lowercase
+
+  return str
+};
+
+  let intialOptions = createOptionsWithBody(getMetaobjectData());
+  fetch(`https://overkilltest.myshopify.com/api/graphql`, intialOptions)
+  .then(res => res.json())
+  .then(renderObjects);
+
+</script>
+{% comment %}
+      {%- for swatch in shop.metaobjects.spray_color_combine.values  -%}
+        .product-block-options__item[data-option-item="{{swatch.name}}"]{
+            background-color: {{ swatch.color.value}};
+        }
+
+        .spray-swatch[data-color="{{swatch.name}}"]{
+            background-color: {{ swatch.color.value}};
+        }
+    {%- endfor -%}
+{% endcomment %}

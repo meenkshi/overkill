@@ -1,0 +1,24 @@
+{% assign savings = 0 %}
+{%- liquid
+        for item in cart.items
+            for prop in item.properties 
+                if prop[0] == "_compare"
+                    assign prop_times_quantity = prop[1] | times: item.quantity
+                    assign item_savings = prop_times_quantity | minus: item.final_line_price
+                endif
+                assign savings = savings | plus: item_savings
+            endfor   
+        endfor
+-%}
+{% unless savings == 0 %}   
+<div class="{{ css_class_savings }}">
+    {{ 'cart.general.money-saved' | t }}
+    <span class="theme-money">
+        {%- if settings.cart_currency_code_enabled -%}
+            {{- savings | money_with_currency -}}
+        {%- else -%}
+            {{- savings | money -}}
+        {%- endif -%}  
+    </span>
+</div>
+{% endunless %}

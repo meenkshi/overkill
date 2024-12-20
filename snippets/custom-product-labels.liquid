@@ -1,0 +1,2 @@
+{%- capture product_collections -%}{% for collection in product.collections %}{{ collection.handle }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+<product-labels data-product-id="{{- product.id -}}" data-product-collections ='{{- product_collections | replace: "\n", "" -}}' class="label--{{ product.id }}{% for collection in product.collections %} label--{{ collection.id }}{% endfor %}"></product-labels>

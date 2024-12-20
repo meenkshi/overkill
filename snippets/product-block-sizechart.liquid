@@ -1,0 +1,255 @@
+{% liquid
+  assign show_size_swatches = false
+  assign only_eu = false 
+  assign is_shoe = false
+  assign product_type = product.type | downcase
+
+  assign coming_soon = product.metafields.coming_soon.coming_soon_date | date: "%s"
+  assign current_date = "now" | date: "%s"
+  assign coming_soon_tag = false
+
+  if product.metafields.coming_soon.coming_soon_date.value != blank and coming_soon > current_date
+    assign coming_soon_tag = true
+  endif
+%}
+
+{% for option in product.options_with_values %}
+  {% assign downcased_option = option.name | downcase %}
+  {% assign size_options = 'size,grosse,groesse' | split: ',' %}
+  {% if size_options contains downcased_option %}
+    {% assign show_size_swatches = true %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% if product_type contains "sneakers" %}
+  {% assign is_shoe = true %}
+{% endif %}
+
+{% for tag in product.tags %}
+  {% if tag == 'Accessories' %}
+    {% if product.variants.size == 1 %}
+      {% assign show_size_swatches = false %}
+    {% else %}
+      {% assign show_size_swatches = true %}
+    {% endif %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% for tag in product.tags %}
+  {% if tag == 'Footwear' %}
+    {% assign is_shoe = true %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% for tag in product.tags %}
+  {% if tag == 'Clothing' %}
+    {% assign only_eu = true %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% for item in product.metafields.other.release_type.value %}
+  {% if item == "Instore" %}
+    {% assign show_size_swatches = false %}
+  {% endif %}
+{% endfor %}
+
+{% if coming_soon_tag %}
+  {% assign show_size_swatches = false %}
+{% endif %}
+
+{% assign hide_product = false %}
+  {% if product.has_only_default_variant %}
+    {% if product.variants[0].title != "One Size" %}
+      {% assign hide_product = true %}
+    {% endif %}
+  {% endif %}
+
+{% unless hide_product %}
+  {% capture size_chart_content %}
+    {% for option in product.options_with_values %}
+        {% assign show_size_chart = false %}
+        {% assign downcased_option = option.name | downcase %}
+    
+        {% assign size_options = 'size,grosse,groesse' %}
+        {% assign downcase_option = option.name | downcase %}
+        {% if size_options contains downcase_option %}
+          <fieldset class="option-selector" data-quick-options>
+            <div class="flex justify-center">
+              {% assign size_chart_handle = product.metafields.custom.size_chart_object.value.system.handle %}
+              {% if size_chart_handle == blank %}
+                {% assign temp_size_chart_handle = product.metafields.other.manufacturer %}
+                {% if shop.metaobjects.size_chart[temp_size_chart_handle] != blank %}
+                  {% assign size_chart_handle = temp_size_chart_handle %}
+                {% endif %}
+              {% endif %}
+              {% assign available_size_langs = 'EU' %}
+              {%- if shop.metaobjects['size_chart'][size_chart_handle].us_chart_values != blank -%}
+                {% assign available_size_langs = available_size_langs | append: ',US' %}
+              {%- endif -%}
+              {%- if shop.metaobjects['size_chart'][size_chart_handle].uk_chart_values != blank -%}
+                {% assign available_size_langs = available_size_langs | append: ',UK' %}
+              {%- endif -%}
+              {%- if shop.metaobjects['size_chart'][size_chart_handle].cm_chart_values != blank -%}
+                {% assign available_size_langs = available_size_langs | append: ',CM' %}
+              {%- endif -%}
+              {%- if shop.metaobjects['size_chart'][size_chart_handle].standard_size_chart_values != blank -%}
+                {% assign available_size_langs = available_size_langs | append: ',STANDARD' %}
+              {%- endif -%}
+              {% assign size_langs = 'EU,US,UK,CM,STANDARD' | split: ',' %}
+              {%- unless only_eu == true or size_chart_handle == blank -%}
+                <div class="size-chart-selector flex" data-tabs="size--charts" data-target="{{ size }}">
+                  {% for size in size_langs %}
+                    <div
+                      data-size-label="{{ size }}"
+                      class="label-picker {%- if size == "EU" %} active{%- endif -%} {%- unless available_size_langs contains size %} disabled{%- endunless -%}"
+                    >
+                      {{ size }}
+                    </div>
+      
+                    {%  unless show_size_swatches %} {% break %} {% endunless %}
+                  {% endfor %}
+                </div>
+              {% endunless %}
+            </div>
+    
+            {% if shop.metaobjects.size_chart[size_chart_handle] != blank %}
+              <div
+                data-sizechart-vals='{{ shop.metaobjects['size_chart'][size_chart_handle] | json }}'
+              ></div>
+            {% endif %}
+            <div
+              {% if shop.metaobjects.size_chart[size_chart_handle] != blank %}
+                data-size="EU"
+              {% endif %}
+              class="option-selector__btns flex flex-wrap {%if is_shoe%}sizes--shoe{%endif%}"
+            >
+              {%- for value in option.values -%}
+                {%- assign value_index0 = forloop.index0 -%}
+                {% assign has_size_variant = false %}
+                {% for variant in product.variants %}
+                  {% if variant.options contains value and variant.available %}
+                    {% assign has_size_variant = true %}
+                    {% assign first_size_variant = variant %}
+                    {% break %}
+                  {% endif %}
+                {% endfor %}
+                <input
+                  type="radio"
+                  class="opt-btn visually-hidden focus-label js-option"
+                  name="{{ option_id }}-option"
+                  id="{{ option_id }}-opt-{{ value_index0 }}"
+                  value="{{ value | escape }}"
+                  required
+                  {% if product.variants.size == 1 or product.selected_variant %}
+                    {%- if option.selected_value == value %} checked{% endif -%}
+                  {% endif %}
+                >
+                <a
+                  {% if has_size_variant %}
+                    href="{{ first_size_variant.url }}"
+                  {% else %}
+                    disabled
+                  {% endif %}
+                  class="opt-label {% if is_swatch %}opt-label--swatch{% else %}opt-label--btn{% endif %} btn relative text-center"
+                  {% if is_swatch %}
+                    data-swatch="{{ value | replace: '"', '' | downcase }}"
+                  {% endif %}
+                  {% if shop.metaobjects.size_chart[size_chart_handle] != blank %}
+                    data-eu
+                  {% endif %}
+                  for="{{ option_id }}-opt-{{ value_index0 }}"
+                >
+                  <span class="{% if is_swatch and settings.swatch_style != 'listed' %}visually-hidden {% endif %}js-value">
+                    {{- value -}}
+                  </span>
+                </a>
+    
+                {% if shop.metaobjects.size_chart[size_chart_handle] != blank and only_eu == false %}
+                  <a
+                    {% if has_size_variant %}
+                      href="{{ first_size_variant.url }}"
+                    {% else %}
+                      disabled
+                    {% endif %}
+                    data-us
+                    class="opt-label {% if is_swatch %}opt-label--swatch{% else %}opt-label--btn{% endif %} btn relative text-center"
+                    for="{{ option_id }}-opt-{{ value_index0 }}"
+                  >
+                    <span class="{% if is_swatch and settings.swatch_style != 'listed' %}visually-hidden {% endif %}js-value">
+                      -
+                    </span>
+                  </a>
+    
+                  <a
+                    data-uk
+                    {% if has_size_variant %}
+                      href="{{ first_size_variant.url }}"
+                    {% else %}
+                      disabled
+                    {% endif %}
+                    class="opt-label {% if is_swatch %}opt-label--swatch{% else %}opt-label--btn{% endif %} btn relative text-center"
+                    {% if is_swatch %}
+                      data-swatch="{{ value | replace: '"', '' | downcase }}"
+                    {% endif %}
+                    for="{{ option_id }}-opt-{{ value_index0 }}"
+                  >
+                    <span class="{% if is_swatch and settings.swatch_style != 'listed' %}visually-hidden {% endif %}js-value">
+                      -
+                    </span>
+                  </a>
+    
+                  <a
+                    data-cm
+                    {% if has_size_variant %}
+                      href="{{ first_size_variant.url }}"
+                    {% else %}
+                      disabled
+                    {% endif %}
+                    class="opt-label {% if is_swatch %}opt-label--swatch{% else %}opt-label--btn{% endif %} btn relative text-center"
+                    {% if is_swatch %}
+                      data-swatch="{{ value | replace: '"', '' | downcase }}"
+                    {% endif %}
+                    for="{{ option_id }}-opt-{{ value_index0 }}"
+                  >
+                    <span class="{% if is_swatch and settings.swatch_style != 'listed' %}visually-hidden {% endif %}js-value">
+                      -
+                    </span>
+                  </a>
+
+                  <a
+                    data-standard
+                    {% if has_size_variant %}
+                      href="{{ first_size_variant.url }}"
+                    {% else %}
+                      disabled
+                    {% endif %}
+                    class="opt-label {% if is_swatch %}opt-label--swatch{% else %}opt-label--btn{% endif %} btn relative text-center"
+                    {% if is_swatch %}
+                      data-swatch="{{ value | replace: '"', '' | downcase }}"
+                    {% endif %}
+                    for="{{ option_id }}-opt-{{ value_index0 }}"
+                  >
+                    <span class="{% if is_swatch and settings.swatch_style != 'listed' %}visually-hidden {% endif %}js-value">
+                      -
+                    </span>
+                  </a>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </fieldset>
+    
+          {% break %}
+        {% endif %}
+      {% endfor %}
+    {% endcapture %}
+
+    {%- if size_chart_content != blank and show_size_swatches == true-%}
+      <size-swatch>
+        {{ size_chart_content }}
+      </size-swatch>
+    {%- endif -%}
+{% endunless %}

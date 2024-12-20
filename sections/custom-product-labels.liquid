@@ -1,0 +1,559 @@
+{% if section.blocks.size > 0 %}
+  {{ 'custom-product-labels.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'custom-product-labels.js' | asset_url }}" defer></script>
+  <style>
+    {% for label in section.blocks %}
+      
+      {%- liquid
+        assign show_on_home_page = label.settings.show_on_homepage
+        assign show_on_search_page = label.settings.show_on_search_page
+        assign show_on_cart_page = label.settings.show_on_cart_page
+        assign show_on_collection_page = label.settings.show_on_collection_page
+        assign show_on_product_page = label.settings.show_on_product_page
+        if request.path contains "/cart"
+          assign font_size = label.settings.font_size_cart
+          assign font_size_mobile = label.settings.font_size_mobile_cart
+          assign image_width_desktop = label.settings.image_width_desktop_cart
+          assign image_width_mobile = label.settings.image_width_mobile_cart
+          assign padding_x = label.settings.padding_x_cart
+          assign padding_y = label.settings.padding_y_cart
+          assign horizontal_alignment = label.settings.horizontal_alignment_cart
+          assign vertical_alignment = label.settings.vertical_alignment_cart
+        else
+          assign font_size = label.settings.font_size
+          assign font_size_mobile = label.settings.font_size_mobile
+          assign image_width_desktop = label.settings.image_width_desktop
+          assign image_width_mobile = label.settings.image_width_mobile
+          assign padding_x = label.settings.padding_x
+          assign padding_y = label.settings.padding_y
+          assign horizontal_alignment = label.settings.horizontal_alignment
+          assign vertical_alignment = label.settings.vertical_alignment
+        endif
+      -%}
+
+      {% for product in label.settings.label_products %}
+        {% if show_on_home_page != true %}
+          .template-index .label--{{ product.id }} {
+            display: none;
+          }
+        {% endif %}
+        {% if show_on_product_page != true %}
+          .template-product .label--{{ product.id }} {
+            display: none;
+          }
+        {% endif %}
+        {% if show_on_collection_page != true %}
+          .template-collection .label--{{ product.id }} {
+            display: none;
+          }
+        {% endif %}
+        {% if show_on_cart_page != true %}
+          .template-cart .label--{{ product.id }} {
+            display: none;
+          }
+          cart-drawer.drawer .label--{{ product.id }} {
+            display: none;
+          }
+        {% else %}
+          cart-drawer.drawer .label--{{ product.id }} {
+            display: flex;
+          }
+        {% endif %}
+        {% if show_on_search_page != true %}
+          .template-search .label--{{ product.id }} {
+            display: none;
+          }
+          .main-search__results .label--{{ product.id }} {
+            display: none;
+          }
+        {% else %}
+          .main-search__results .label--{{ product.id }} {
+            display: flex;
+          }
+        {% endif %}
+      {% endfor %}
+
+
+      {% for collection in label.settings.label_collections %}
+        {% if show_on_home_page != true %}
+          .template-index .label--{{ collection.id }} {
+            display: none;
+          }
+        {% endif %}
+        {% if show_on_product_page != true %}
+          .template-product .label--{{ collection.id }} {
+            display: none;
+          }
+        {% endif %}
+        {% if show_on_collection_page != true %}
+          .template-collection .label--{{ collection.id }} {
+            display: none;
+          }
+        {% endif %}
+        {% if show_on_cart_page != true %}
+          .template-cart .label--{{ collection.id }} {
+            display: none;
+          }
+          cart-drawer.drawer .label--{{ collection.id }} {
+            display: none;
+          }
+        {% else %}
+          cart-drawer.drawer .label--{{ collection.id }} {
+            display: flex;
+          }
+          cart-drawer.drawer product-labels div {
+            margin: {{ label.settings.horizontal_alignment_cart | append: "px" }}
+            {{ label.settings.vertical_alignment_cart | append: "px" }}
+            0 0;
+          }
+          cart-drawer.drawer product-labels span[data-label-id="{{label.id}}"] {
+            padding: {{ label.settings.padding_y_cart | append: "px" }}
+            {{ label.settings.padding_x_cart | append: "px" }};
+            font-size: {{ label.settings.font_size_cart | append: "px" }};
+          }
+          cart-drawer.drawer product-labels span[data-label-id="{{label.id}}"] img {
+            width: {{ label.settings.image_width_desktop_cart | append: "px" }};
+            height: auto;
+          }
+
+          @media screen and (max-width: 1023px) {
+            cart-drawer.drawer product-labels span[data-label-id="{{label.id}}"] {
+              font-size: {{ label.settings.font_size_mobile_cart | append: "px" }};
+            }
+
+            cart-drawer.drawer product-labels span[data-label-id="{{label.id}}"] img {
+              width: {{ label.settings.image_width_mobile_cart | append: "px" }};
+              height: auto;
+            }
+          }
+        {% endif %}
+        {% if show_on_search_page != true %}
+          .template-search .label--{{ collection.id }} {
+            display: none;
+          }
+          .main-search__results .label--{{ collection.id }} {
+            display: none;
+          }
+        {% else %}
+          .main-search__results .label--{{ collection.id }} {
+            display: flex;
+          }
+        {% endif %}
+      {% endfor %}
+
+      {% if label.settings.link_underline %}
+        product-labels div span,
+        product-labels div a {
+          text-decoration: underline;
+        }
+      {% else %} 
+        product-labels div span,
+        product-labels div a {
+        text-decoration: none;
+      }
+      {% endif %}
+      product-labels div[data-label-id="{{label.id}}"] {
+        margin: {{ vertical_alignment | append: "px" }}
+        {{ horizontal_alignment | append: "px" }}
+        0 0;
+      }
+
+      product-labels span[data-label-id="{{label.id}}"] {
+        padding: {{ padding_y | append: "px" }}
+        {{ padding_x | append: "px" }};
+        font-size: {{ font_size | append: "px" }};
+      }
+      product-labels span[data-label-id="{{label.id}}"] img {
+        width: {{ image_width_desktop | append: "px" }};
+        height: auto;
+      }
+      @media screen and (max-width: 1023px) {
+        product-labels span[data-label-id="{{label.id}}"] {
+          font-size: {{ font_size_mobile | append: "px" }};
+        }
+
+        product-labels span[data-label-id="{{label.id}}"] img {
+          width: {{ image_width_mobile | append: "px" }};
+          height: auto;
+        }
+      }
+    {% endfor %}
+  </style>
+  <script type="application/json" data-product-labels>
+    {
+      "settings": null,
+      "labels": [
+        {% for label in section.blocks %}
+          {%- liquid
+            assign show_badge = true
+            assign is_between_dates = false
+
+            assign show_on_desktop = label.settings.show_on_desktop
+            assign show_on_mobile = label.settings.show_on_mobile
+
+            assign label_text = label.settings.text
+            assign label_link = label.settings.link
+
+            if label.settings.label_image != blank
+              assign label_image = label.settings.label_image | image_url
+            else
+              assign label_image = ""
+            endif
+            assign text_color = label.settings.text_color
+
+            assign bg_color = label.settings.bg_color
+            assign bg_opacity = label.settings.bg_opacity | divided_by: 100.0
+            assign bg_color = bg_color | color_to_rgb | replace_last: ')', ',' | append: bg_opacity | append: ')'
+
+            assign is_bold = label.settings.is_bold
+
+            assign visibility_startdate = label.settings.visibility_startdate
+            assign visibility_enddate = label.settings.visibility_enddate
+
+            assign label_collections = label.settings.label_collections
+            assign label_products = label.settings.label_products
+
+            assign now_unix = 'now' | date: '%Y-%m-%d %H:%M:%S' | date: '%s'
+            assign start_date = visibility_startdate | date: '%Y-%m-%d %H:%M:%S' | date: '%s'
+            assign end_date = visibility_enddate | date: '%Y-%m-%d %H:%M:%S' | date: '%s'
+
+            if visibility_startdate != blank and visibility_enddate != blank
+              if now_unix > start_date and end_date > now_unix
+                assign is_between_dates = true
+              endif
+            else
+              assign is_between_dates = true
+            endif
+
+            unless is_between_dates
+              assign show_badge = false
+            endunless
+          -%}
+          {
+            "id": "{{label.id}}",
+            "active": {{show_badge}},
+            "text": "{{label_text}}" ,
+            "link": "{{label_link}}",
+            "image": "{{label_image}}",
+            "text_color": "{{text_color}}",
+            "bg_color": "{{bg_color}}",
+            "is_bold": {{is_bold}},
+            "show_on_desktop": {{show_on_desktop}},
+            "show_on_mobile": {{show_on_mobile}},
+            "label_collections": {{label_collections | json}},
+            "label_products": {{label_products | json}}
+          }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }
+  </script>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Product Labels",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "label",
+        "name": "Label",
+        "settings": [
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Label Text"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Label URL"
+          },
+          {
+            "type": "checkbox",
+            "id": "link_underline",
+            "label": "Underline Link"
+          },
+          {
+            "type": "header",
+            "content": "Label Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "label_image",
+            "label": "Image"
+          },
+          {
+            "type": "number",
+            "id": "image_width_desktop",
+            "label": "Image Size (px) - Desktop",
+            "default": 120
+          },
+          {
+            "type": "number",
+            "id": "image_width_mobile",
+            "label": "Image Size (px) - Mobile",
+            "default": 120
+          },
+          {
+            "type": "number",
+            "id": "image_width_desktop_cart",
+            "label": "Cart - Image Size (px) - Desktop",
+            "default": 120
+          },
+          {
+            "type": "number",
+            "id": "image_width_mobile_cart",
+            "label": "Cart - Image Size (px) - Mobile",
+            "default": 120
+          },
+          {
+            "type": "header",
+            "content": "Visibility Conditions"
+          },
+          {
+            "type": "product_list",
+            "id": "label_products",
+            "label": "Labels for specific products",
+            "info": "Select this option to display the label on specific products."
+          },
+          {
+            "type": "collection_list",
+            "id": "label_collections",
+            "label": "Labels for specific collections",
+            "info": "Select this option to display the label on specific collections."
+          },
+          {
+            "type": "checkbox",
+            "id": "show_on_desktop",
+            "label": "Show labels on desktop",
+            "default": true
+          },
+          {
+            "type": "checkbox",
+            "id": "show_on_mobile",
+            "label": "Show labels on mobile",
+            "default": true
+          },
+          {
+            "type": "checkbox",
+            "id": "show_on_homepage",
+            "label": "Home",
+            "info": "Show the label on the homepage.",
+            "default": true
+          },
+          {
+            "type": "checkbox",
+            "id": "show_on_product_page",
+            "label": "Product",
+            "info": "Show the label on the product page.",
+            "default": true
+          },
+          {
+            "type": "checkbox",
+            "id": "show_on_collection_page",
+            "label": "Collection",
+            "info": "Show the label on the collection page.",
+            "default": true
+          },
+          {
+            "type": "checkbox",
+            "id": "show_on_search_page",
+            "label": "Search Results",
+            "info": "Show the label on the search results page.",
+            "default": true
+          },
+          {
+            "type": "checkbox",
+            "id": "show_on_cart_page",
+            "label": "Cart",
+            "info": "Show the label on the cart page.",
+            "default": true
+          },
+          {
+            "type": "header",
+            "content": "Visibility Dates"
+          },
+          {
+            "type": "text",
+            "id": "visibility_startdate",
+            "label": "Start date",
+            "info": "Format: yyyy/MM/dd hh:mm"
+          },
+          {
+            "type": "text",
+            "id": "visibility_enddate",
+            "label": "End date",
+            "info": "Format: yyyy/MM/dd hh:mm"
+          },
+          {
+            "type": "header",
+            "content": "Style"
+          },
+          {
+            "type": "color",
+            "id": "bg_color",
+            "label": "Background color",
+            "default": "#000000"
+          },
+          {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text color",
+            "default": "#ffffff"
+          },
+          {
+            "type": "range",
+            "id": "bg_opacity",
+            "label": "Background opacity",
+            "default": 100,
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "unit": "%"
+          },
+          {
+            "type": "header",
+            "content": "Font"
+          },
+          {
+            "type": "range",
+            "id": "font_size",
+            "label": "Font size (Desktop)",
+            "default": 11,
+            "min": 6,
+            "max": 100,
+            "unit": "px",
+            "step": 1
+          },
+          {
+            "type": "range",
+            "id": "font_size_mobile",
+            "label": "Font size (Mobile)",
+            "default": 11,
+            "min": 6,
+            "max": 100,
+            "unit": "px",
+            "step": 1
+          },
+          {
+            "type": "range",
+            "id": "font_size_cart",
+            "label": "Cart - Font size (Desktop)",
+            "default": 11,
+            "min": 6,
+            "max": 100,
+            "unit": "px",
+            "step": 1
+          },
+          {
+            "type": "range",
+            "id": "font_size_mobile_cart",
+            "label": "Cart - Font size (Mobile)",
+            "default": 11,
+            "min": 6,
+            "max": 100,
+            "unit": "px",
+            "step": 1
+          },
+          {
+            "type": "checkbox",
+            "id": "is_bold",
+            "label": "Bold"
+          },
+          {
+            "type": "header",
+            "content": "Padding"
+          },
+          {
+            "type": "range",
+            "id": "padding_x",
+            "label": "Horizontal padding",
+            "default": 8,
+            "min": 0,
+            "max": 20,
+            "unit": "px",
+            "step": 1,
+            "info": "Padding on left and right"
+          },
+          {
+            "type": "range",
+            "id": "padding_y",
+            "label": "Vertical padding",
+            "default": 8,
+            "min": 0,
+            "max": 20,
+            "unit": "px",
+            "step": 1,
+            "info": "Padding on top and bottom"
+          },
+          {
+            "type": "range",
+            "id": "padding_x_cart",
+            "label": "Cart - Horizontal padding",
+            "default": 8,
+            "min": 0,
+            "max": 20,
+            "unit": "px",
+            "step": 1,
+            "info": "Padding on left and right"
+          },
+          {
+            "type": "range",
+            "id": "padding_y_cart",
+            "label": "Cart - Vertical padding",
+            "default": 8,
+            "min": 0,
+            "max": 20,
+            "unit": "px",
+            "step": 1,
+            "info": "Padding on top and bottom"
+          },
+          {
+            "type": "header",
+            "content": "Alignment"
+          },
+          {
+            "type": "range",
+            "id": "horizontal_alignment",
+            "label": "Horizontal alignment",
+            "default": 0,
+            "min": 0,
+            "max": 100,
+            "unit": "px",
+            "step": 1
+          },
+          {
+            "type": "range",
+            "id": "vertical_alignment",
+            "label": "Vertical alignment",
+            "default": 0,
+            "min": 0,
+            "max": 100,
+            "unit": "px",
+            "step": 1
+          },
+          {
+            "type": "range",
+            "id": "horizontal_alignment_cart",
+            "label": "Cart - Horizontal alignment",
+            "default": 0,
+            "min": 0,
+            "max": 100,
+            "unit": "px",
+            "step": 1
+          },
+          {
+            "type": "range",
+            "id": "vertical_alignment_cart",
+            "label": "Cart - Vertical alignment",
+            "default": 0,
+            "min": 0,
+            "max": 100,
+            "unit": "px",
+            "step": 1
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

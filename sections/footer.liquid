@@ -1,0 +1,541 @@
+{% if section.blocks != blank %}
+  <style>
+    .section-footer_row_around {
+      justify-content: space-around;
+    }
+    @media (hover: hover) {
+      .dropdown-mobile .dropdown-header {
+        cursor: pointer;
+      }
+    }
+    .dropdown-mobile .dropdown-header svg {
+      transition: transform 400ms ease;
+    }
+    @media (min-width: 768px) {
+      .dropdown-content {
+        display: block;
+      }
+      .dropdown-mobile .dropdown-header svg {
+        display: none;
+      }
+    }
+    @media (max-width: 767.98px) {
+      .section-footer__row--blocks {
+        padding-bottom: 1em;
+      }
+      .section-footer__row .section-footer__row__col.dropdown-mobile {
+        padding: 0;
+        margin-bottom: 2em;
+      }
+      .dropdown-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--footer-divider-col);
+        margin-bottom: 0em;
+        padding-bottom: 0.8em;
+
+      }
+      .dropdown-mobile .dropdown-header svg {
+        transform: rotate(-0.5turn);
+        width: 18px;
+        height: 18px;
+      }
+      .dropdown-mobile .dropdown-header.open {
+        border-bottom: none;
+      }
+      .dropdown-mobile .dropdown-header.open svg {
+        transform: rotate(0turn);
+      }
+      .dropdown-content {
+        display: none;
+        padding-bottom: 1em;
+        border-bottom: 1px solid var(--footer-divider-col);
+      }
+    }
+  </style>
+  <div class="container section-footer__row-container">
+    <div class="section-footer__row section-footer__row--blocks section-footer_row_around{% if section.settings.dropdown_mobile %} dropdown-footer{% endif %}" data-num-blocks="{{ section.blocks.size }}">
+      {% for block in section.blocks %}
+        {% case block.type %}
+        {% when '@app' %}
+          <div class="section-footer__row__col">
+            {% render block %}
+          </div>
+
+        {% when 'menu' %}
+          <div class="section-footer__row__col section-footer__menu-block{% if section.settings.dropdown_mobile %} dropdown-mobile{% endif %}" role="navigation" aria-label="{{ 'accessibility.secondary_navigation' | t }}" {{ block.shopify_attributes }}>
+            {% if block.settings.title != blank %}
+              {%- assign title_word_count = block.settings.title | split: ' ' | size -%}
+              <div class="section-footer__title heading-font h6{% if title_word_count < 4 %} no-wrap{% endif %}{% if section.settings.dropdown_mobile %} dropdown-header{% endif %}">
+                {{- block.settings.title | escape -}}
+                {% if section.settings.dropdown_mobile %}{% render 'icon-dropdown-chevron' %}{% endif %}
+              </div>
+            {% endif %}
+
+            {% if block.settings.menu != blank %}
+              <ul class="section-footer__menu-block__menu{% if section.settings.dropdown_mobile %} dropdown-content{% endif %}" {{ block.shopify_attributes }}>
+                {% for link in linklists[block.settings.menu].links %}
+                  {%- liquid
+                    comment
+                    This avoids the URL from getting the locale
+                    prepended when it's a hashtag
+                    endcomment
+                    assign link_url = link.url
+                    if link_url contains '#cookieconsent'
+                      assign link_url = '#cookieconsent'
+                    endif
+                  -%}
+
+                  <li>
+                    <a href="{{ link_url }}" {% if link.title.size < 25 %}class="no-wrap"{% endif %}>
+                      {{- link.title -}}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+        {% when 'text' %}
+          <div class="section-footer__row__col section-footer__text-block {% if block.settings.text != blank %}section-footer__text-block--with-text{% endif %}" {{ block.shopify_attributes }}>
+            {% if block.settings.title != blank %}
+              {%- assign title_word_count = block.settings.title | split: ' ' | size -%}
+              <div class="section-footer__title heading-font h6{% if title_word_count < 4 %} no-wrap{% endif %}">
+                {{- block.settings.title | escape -}}
+              </div>
+            {% endif %}
+
+            {% if block.settings.text != blank %}
+              <div class="section-footer__text rte">
+                {{- block.settings.text -}}
+              </div>
+            {% endif %}
+
+            {% if block.settings.image != blank %}
+              <span class="section-footer__text-block__image" style="max-width: {{ block.settings.image_width }}px">
+                {%- liquid
+                  assign image_sizes = block.settings.image_width | append: 'px'
+                  assign image_widths = block.settings.image_width | times: 2 | prepend: ', ' | prepend: block.settings.image_width
+                -%}
+                {%- render 'image' with block.settings.image, sizes: image_sizes, widths: image_widths, loading: 'lazy' -%}
+              </span>
+            {% endif %}
+
+            {% if block.settings.show_social_icons != blank %}
+              <div class="section-footer__text-block__social">
+                {%- liquid
+                  if block.settings.soc_icons_large
+                    assign icon_height = 23
+                  else
+                    assign icon_height = 15
+                  endif
+                  if block.settings.soc_icons_large
+                    assign container_class = 'social--large'
+                  else
+                    assign container_class = ''
+                  endif
+
+                  render 'social-media', icon: settings.social_custom_icon, icon_height: icon_height, class: container_class
+                -%}
+              </div>
+            {% endif %}
+
+            {%- if shop.features.follow_on_shop? and block.settings.enable_follow_on_shop -%}
+              <div class="section-footer__follow-on-shop">
+                {{- shop | login_button: action: 'follow' -}}
+              </div>
+            {%- endif -%}
+          </div>
+
+        {% when 'newsletter' %}
+          <div class="section-footer__row__col section-footer__newsletter-block{% if section.settings.dropdown_mobile %} dropdown-mobile{% endif %}" {{ block.shopify_attributes }}>
+            {% if block.settings.title != blank %}
+              {%- assign title_word_count = block.settings.title | split: ' ' | size -%}
+              <div class="section-footer__title heading-font h6{% if title_word_count < 4 %} no-wrap{% endif %}{% if section.settings.dropdown_mobile %} dropdown-header{% endif %}">
+                {{- block.settings.title | escape -}}
+                {% if section.settings.dropdown_mobile %}{% render 'icon-dropdown-chevron' %}{% endif %}
+              </div>
+            {% endif %}
+            {% if section.settings.dropdown_mobile %}<div class="newsletter-content dropdown-content">{% endif %}
+            {% if block.settings.text != blank %}
+              <div class="section-footer__text rte">
+                {{ block.settings.text }}
+              </div>
+            {% endif %}
+
+            {% render 'newsletter-signup', id: 'footer_newsletter_signup', tags: 'newsletter, footer', block: block %}
+
+            {% if block.settings.show_social_icons != blank %}
+              <div class="section-footer__newsletter-block__social">
+                {%- liquid
+                  if block.settings.soc_icons_large
+                    assign icon_height = 23
+                  else
+                    assign icon_height = 15
+                  endif
+                  if block.settings.soc_icons_large
+                    assign container_class = 'social--large'
+                  else
+                    assign container_class = ''
+                  endif
+
+                  render 'social-media', icon: settings.social_custom_icon, icon_height: icon_height, class: container_class
+                -%}
+              </div>
+            {% endif %}
+            {% if section.settings.dropdown_mobile %}</div>{% endif %}
+          </div>
+
+        {% when 'custom-liquid' %}
+          <div class="section-footer__row__col section-footer__custom-liquid-block" {{ block.shopify_attributes }}>
+            {% if block.settings.title != blank %}
+              {%- assign title_word_count = block.settings.title | split: ' ' | size -%}
+              <div class="section-footer__title heading-font h6{% if title_word_count < 4 %} no-wrap{% endif %}">
+                {{- block.settings.title | escape -}}
+              </div>
+            {% endif %}
+
+            <div class="section-footer__custom-liquid">
+              {{- block.settings.code -}}
+            </div>
+          </div>
+
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+
+<script>
+              const dropdowns = document.querySelector('.dropdown-footer');
+              const dropdown_header = document.querySelectorAll('.dropdown-header');
+              const dropdown_content = document.querySelectorAll('.dropdown-content');
+
+              function toggleDropdown(content, parent) {
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
+                    parent.classList.remove('open');
+                  } else {
+                    content.style.display = 'block';
+                    parent.classList.add('open');
+                  }
+              }
+
+              function handleClick(event) {
+                const h = event.target.classList.contains('dropdown-header');
+                const c = event.target.classList.contains('dropdown-chevron');
+                if (h) {
+                  const parent = event.target;
+                  const content = event.target.nextElementSibling;
+                  toggleDropdown(content, parent);
+                }
+                if (c) {
+                  const parent = event.target.parentNode;
+                  const content = parent.nextElementSibling;
+                  toggleDropdown(content, parent);
+                }
+              }
+
+              function setDropdown() {
+                const isMobile = window.innerWidth < 768;
+                if (isMobile) {
+                  dropdowns.addEventListener('click', handleClick);
+                  dropdown_header.forEach(function(h) {
+                    if (h.classList.contains('open')) {
+                      const content = h.nextElementSibling;
+                      content.setAttribute('style', 'display: block');
+                    } else {
+                      const content = h.nextElementSibling;
+                      content.setAttribute('style', 'display: none');
+                    }
+                  });
+                } else {
+                  dropdowns.removeEventListener('click', handleClick);
+                  dropdown_content.forEach(function(e) {
+                    e.setAttribute('style', 'display: block');
+                  });
+                }
+              }
+
+              function updateWidth() {
+                setDropdown();
+              }
+              window.addEventListener('resize', updateWidth);
+              setDropdown();
+</script>
+
+{%- liquid
+  assign showing_localization = false
+  if section.settings.enable_language_selector and localization.available_languages.size > 1
+    assign showing_localization = true
+  endif
+  if section.settings.enable_country_selector and localization.available_countries.size > 1
+    assign showing_localization = true
+  endif
+-%}
+<div class="container section-footer__row-container {% if showing_localization %}section-footer__row-container--with-localization{% endif %}">
+  <div class="section-footer__row section-footer__row-lower">
+    <div class="section-footer__row__col">
+      {% if section.settings.show_payment_icons %}
+        <div class="section-footer__payment-icons">
+          {% for type in shop.enabled_payment_types %}
+            {{ type | payment_type_svg_tag: class: 'section-footer__payment-icon' }}
+          {% endfor %}
+        </div>
+
+      {% endif %}
+      {% if section.settings.lower_menu != blank %}
+        <div class="section-footer__lower-menu" role="navigation">
+          <ul class="section-footer__lower-menu__list" aria-label="{{ 'accessibility.secondary_navigation' | t }}">
+            {% for link in linklists[section.settings.lower_menu].links %}
+              <li>
+                <a href="{{ link.url }}">
+                  {{- link.title -}}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    </div>
+    <div class="section-footer__row__col">
+      {% if section.settings.enable_language_selector or section.settings.enable_country_selector %}
+        <div class="section-footer__localization">
+          {% render 'localization-form', id: 'footer-localization', hide_labels: true %}
+        </div>
+      {% endif %}
+
+      <div class="copyright">
+        {%- assign copyright_year = 'now' | date: '%Y' -%}
+        <span class="copy">{{ 'sections.footer.copyright_html' | t: year: copyright_year, shop_url: routes.root_url, shop_name: shop.name }}</span>
+
+        {% if section.settings.show_powered_by %}
+          {{ powered_by_link }}
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Footer",
+  "class": "section-footer",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "lower_menu",
+      "label": "Lower footer menu",
+      "info": "This menu won't show dropdown items"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_powered_by",
+      "label": "Show 'Powered by Shopify'",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Social media links",
+      "info": "These are shown inside text and newsletter blocks. Add to the footer and enable inside."
+    },
+    {
+      "type": "header",
+      "content": "Mobile View"
+    },
+    {
+      "type": "checkbox",
+      "id": "dropdown_mobile",
+      "label": "Set Footer Menu as Dropdown",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Payment methods"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_payment_icons",
+      "label": "Show payment icons",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Country/Region Selector",
+      "info": "To add a country/region, go to your [payment settings.](/admin/settings/payments)"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_country_selector",
+      "label": "Enable country/region selector",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Language Selector",
+      "info": "To add a language, go to your [language settings.](/admin/settings/languages)"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_language_selector",
+      "label": "Enable language selector",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "menu",
+      "name": "Links",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Quick links"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu",
+          "info": "This menu won't show dropdown items",
+          "default": "footer"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text and social media",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Talk about your store"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Use this text area to tell your customers about your brand and vision. You can change it in the theme editor.</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "image_width",
+          "min": 30,
+          "max": 200,
+          "step": 5,
+          "unit": "px",
+          "label": "Footer image width",
+          "default": 100
+        },
+        {
+          "type": "header",
+          "content": "Social media"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_social_icons",
+          "label": "Show social media links",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "soc_icons_large",
+          "label": "Use large social media icons",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Follow on Shop",
+          "info": "Display follow button for your storefront on the Shop app. [Learn more](https://help.shopify.com/manual/online-store/themes/customizing-themes/follow-on-shop)"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_follow_on_shop",
+          "default": false,
+          "label": "Enable Follow on Shop"
+        }
+      ]
+    },
+    {
+      "type": "newsletter",
+      "limit": 1,
+      "name": "Newsletter",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Newsletter"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Sign up for exclusive offers, original stories, events and more.</p>"
+        },
+        {
+          "type": "paragraph",
+          "content": "Customers who subscribe will have their email address added to the “accepts marketing” [customer list](/admin/customers?query=&accepts_marketing=1)"
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "label": "Button style",
+          "default": "primary",
+          "options": [
+            {
+              "label": "Primary",
+              "value": "primary"
+            },
+            {
+              "label": "Secondary",
+              "value": "secondary"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "id": "show_social_icons",
+          "label": "Show social media links",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "soc_icons_large",
+          "label": "Use large social media icons",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "custom-liquid",
+      "name": "Custom Liquid",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Custom Liquid"
+        },
+        {
+          "type": "liquid",
+          "id": "code",
+          "label": "Liquid code"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

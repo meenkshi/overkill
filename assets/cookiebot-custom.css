@@ -1,0 +1,174 @@
+/**
+  *******************
+  CookieBot Overrides
+  *******************
+*/
+
+/** Dialog */
+#CybotCookiebotDialog {
+  background: #FFF !important;
+  box-shadow: 0 0 0 2000px rgba(0, 0, 0, .3) !important;
+  border-radius: var(--btn-border-radius) !important;
+}
+
+#CybotCookiebotDialog * {
+  font-family: var(--base-font-family) !important;
+  font-weight: var(--base-font-weight) !important;
+  font-style: var(--base-font-style) !important;
+  font-size: calc(var(--base-font-size) - 1px) !important;
+  line-height: 1.7142857143 !important;
+  color: rgb(var(--text-color)) !important;
+}
+
+/* Removes 'Test' text from header */
+#CybotCookiebotDialog > div:not(.CybotCookiebotDialogContentWrapper) {
+  display: none !important;
+}
+
+#CybotCookiebotDialog .CybotCookiebotDialogNavItem .CybotCookiebotDialogNavItemLink,
+#CybotCookiebotDialog #CybotCookiebotDialogBodyContentTitle {
+  color: rgb(var(--heading-color)) !important;
+  text-transform: var(--heading-text-transform) !important;
+  font-family: var(--base-font-family) !important;
+  font-style: var(--base-font-style) !important;
+  font-size: var(--heading-small-font-size) !important;
+  text-transform: uppercase !important;
+  font-weight: var(--text-font-bold-weight) !important;
+  line-height: 1.4663636 !important;
+  letter-spacing: 1px !important;
+}
+
+#CybotCookiebotDialog .CybotCookiebotDialogNavItem .CybotCookiebotDialogNavItemLink {
+  padding: 18px 0 !important;
+}
+
+#CybotCookiebotDialog .CybotCookiebotDialogNavItem .CybotCookiebotDialogNavItemLink.CybotCookiebotDialogActive {
+  border-color: rgb(var(--text-color)) !important;
+}
+
+#CybotCookiebotDialog input:not([disabled])+.CybotCookiebotDialogBodyLevelButtonSlider {
+  background-color: #D6D6D6;
+}
+
+#CybotCookiebotDialog input:not([disabled]):checked+.CybotCookiebotDialogBodyLevelButtonSlider {
+  background-color: rgb(var(--btn-bg-color)) !important;
+}
+
+#CybotCookiebotDialog .CybotCookiebotDialogDetailBodyContentCookieContainerButton {
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+#CybotCookiebotDialog .CybotCookiebotDialogDetailBodyContentCookieContainerButton::before {
+  top: 0 !important;
+  margin-right: 12px !important;
+  border-color: rgb(var(--text-color)) !important;
+}
+
+#CybotCookiebotDialog .CybotCookiebotDialogDetailBodyContentCookieProvider {
+  display: flex !important;
+  align-items: center !important;
+}
+
+#CybotCookiebotDialog .CybotCookiebotDialogDetailBulkConsentCount {
+  margin-left: 8px !important;
+  padding: 0 !important;
+  height: 21px !important;
+  width: 21px !important;
+  text-align: center !important;
+  line-height: 21px !important;
+  font-size: 9px !important;
+  letter-spacing: 0 !important;
+  background-color: rgb(var(--border-color));
+}
+
+#CybotCookiebotDialogBodyButtonsWrapper .CybotCookiebotDialogBodyButton,
+#CookiebotWidget-buttons button {
+  display: inline-block;
+  height: auto;
+  margin: 0;
+  padding: var(--input-btn-padding-top) 25px var(--input-btn-padding-bottom) !important;
+  transition: background-color .1s, color .1s, border-color .1s, opacity .1s !important;
+  border: 1.5px solid rgb(var(--btn-border-color)) !important;
+  border-radius: var(--btn-border-radius) !important;
+  background: rgb(var(--btn-bg-color)) !important;
+  color: rgb(var(--btn-text-color)) !important;
+  font-family: var(--base-font-family) !important;
+  font-size: var(--button-text-size) !important;
+  font-style: var(--base-font-style) !important;
+  font-weight: var(--base-font-weight) !important;
+  letter-spacing: var(--btn-letter-spacing) !important;
+  line-height: 1em !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-transform: var(--btn-text-transform);
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#CybotCookiebotDialogBodyButtonsWrapper .CybotCookiebotDialogBodyButton:hover,
+#CookiebotWidget-buttons button:hover {
+  border-color: rgb(var(--btn-border-hover-color)) !important;
+  background: rgb(var(--btn-bg-hover-color)) !important;
+  color: rgb(var(--btn-text-hover-color)) !important;
+}
+
+#CybotCookiebotDialogBodyButtonsWrapper #CybotCookiebotDialogBodyButtonDecline,
+#CybotCookiebotDialogBodyButtonsWrapper #CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection {
+  --btn-text-color: var(--btn-alt-text-color);
+  --btn-text-hover-color: var(--btn-alt-bg-color);
+  --btn-bg-color: var(--btn-alt-bg-color);
+  --btn-bg-hover-color: var(--btn-alt-text-color);
+  --btn-border-color: var(--btn-alt-border-color);
+  --btn-border-hover-color: var(--btn-alt-border-hover-color);
+}
+
+/** Widget */
+#CookiebotWidget * {
+  font-family: var(--base-font-family) !important;
+  font-weight: var(--base-font-weight) !important;
+  font-style: var(--base-font-style) !important;
+  font-size: calc(var(--base-font-size) - 1px) !important;
+  line-height: 1.7142857143 !important;
+  color: rgb(var(--text-color)) !important;
+}
+
+#CookiebotWidget:not(.CookiebotWidget-open) {
+  display: none !important;
+}
+
+#CookiebotWidget-widgetContent {
+  background-color: #FFF !important;
+  border-radius: var(--btn-border-radius) !important;
+}
+
+#CookiebotWidget button.CookiebotWidget-logo {
+  display: none !important;
+}
+
+#CookiebotWidget .CookiebotWidget-header strong {
+  font-family: var(--heading-font-family) !important;
+  font-weight: var(--heading-font-weight) !important;
+  font-style: var(--heading-font-style) !important;
+  color: rgb(var(--heading-color)) !important;
+  text-transform: var(--heading-text-transform) !important;
+  font-size: var(--heading-h6-font-size) !important;
+  line-height: 1.25 !important;
+}
+
+#CookiebotWidget .CookiebotWidget-state {
+  font-size: var(--heading-small-font-size) !important;
+  text-transform: uppercase !important;
+  line-height: 1.5 !important;
+}
+
+#CookiebotWidget .Cookiebotwidget-consent-icon svg {
+  fill: rgb(var(--heading-color)) !important;
+  width: 16px !important;
+}
+
+#CybotCookiebotDialogPoweredByText,
+#CybotCookiebotDialogPoweredbyCybot {
+  display: none !important;
+}

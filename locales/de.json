@@ -1,0 +1,916 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin language editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "general": {
+    "localization": {
+      "country_label": "Land\/Region",
+      "countries_error": "Fehler beim Abrufen der Länder, bitte versuche es erneut.",
+      "language_label": "Sprache",
+      "update": "Aktualisieren"
+    },
+    "icon_labels": {
+      "close": "Schließen",
+      "play": "Abspielen"
+    },
+    "labels": {
+      "please_select": "Bitte auswählen"
+    },
+    "navigation": {
+      "menu": "Menü",
+      "show_links": "Links anzeigen",
+      "back": "Zurück",
+      "close": "Schließen",
+      "featured": "EMPFOHLEN"
+    },
+    "breadcrumbs": {
+      "title": "Semmelbrösel",
+      "home": "Startseite",
+      "collections": "Kategorien"
+    },
+    "pagination": {
+      "next": "Nächste",
+      "previous": "Vorherige"
+    },
+    "search": {
+      "title": "Suchen",
+      "input_label": "Suchen",
+      "placeholder": "Shop durchsuchen",
+      "submit": "Suchen",
+      "close": "Schließen",
+      "results_with_count": {
+        "one": "{{ count }} Ergebnis",
+        "other": "{{ count }} Ergebnisse"
+      },
+      "no_results": "Keine Ergebnisse gefunden für \"{{ terms }}\".",
+      "no_results_without_terms": "Leider haben wir keine Ergebnisse gefunden",
+      "suggestions": "Vorschläge",
+      "pages": "Seiten",
+      "view_all": "Alle Suchergebnisse anzeigen"
+    },
+    "slider": {
+      "next": "Nächste",
+      "previous": "Vorherige",
+      "of": "von"
+    },
+    "social": {
+      "share_heading": "Teilen",
+      "share_on_facebook": "Auf Facebook teilen",
+      "share_on_twitter": "Auf Twitter twittern",
+      "share_on_pinterest": "Auf Pinterest pinnen",
+      "follow_shop": "{{ shop_name }} auf {{ social_platform }}"
+    },
+    "meta": {
+      "page": "Seite {{ page }}",
+      "tags": "Getaggt \"{{ tags }}\""
+    }
+  },
+  "accessibility": {
+    "skip_to_content": "Direkt zum Inhalt",
+    "close": "Schließen",
+    "main_navigation": "Primär",
+    "secondary_navigation": "Sekundär",
+    "star_reviews_info": "{{ rating_value }} von {{ rating_max }} Sternen",
+    "view_details": "Einzelheiten anzeigen"
+  },
+  "products": {
+    "meta_html": "Jetzt {{ brand }} {{ product_title }} | {{ manufacturer_sku }} | {{ color }}  bei OVERKILL bestellen - ✓ Kostenloser Versand in Deutschland ab 80 € ✓ Kostenloser Rückversand in Deutschland ab 40 €.",
+    "product": {
+      "add_to_cart": "In den Warenkorb",
+      "added_to_cart_with_link_html": "Zum <a href=\"{{ cart_url }}\">Warenkorb<\/a> hinzugefügt",
+      "backorder": "ist auf Lager und wird versandt, sobald es wieder verfügbar ist",
+      "barcode": "Barcode:",
+      "choose_a": "Wähle ein",
+      "description": "Beschreibung",
+      "read_more": "Mehr anzeigen",
+      "show_less": "Weniger anzeigen",
+      "from": "Ab",
+      "include_taxes": "inklusive",
+      "media": {
+        "gallery_viewer": "Galerie-Viewer",
+        "load_image": "Bild {{ index }} in Galerieansicht laden",
+        "play_video": "Video abspielen"
+      },
+      "more_swatches": "+ {{ count }} mehr",
+      "new": "Neu",
+      "next_product": "Nächste",
+      "percent_reduction": "{{ amount }}% Rabatt",
+      "pickup_availability": {
+        "check_other_stores": "Verfügbarkeit in anderen Shops überprüfen",
+        "pick_up_available": "Abholung verfügbar",
+        "pick_up_available_at_html": "Abholung bei <strong>{{ location_name }}<\/strong> verfügbar",
+        "pick_up_unavailable": "Abholung derzeit nicht verfügbar",
+        "pick_up_unavailable_at_html": "Abholung bei <strong>{{ location_name }}<\/strong> derzeit nicht verfügbar",
+        "refresh": "Aktualisieren",
+        "unavailable": "Verfügbarkeit für Abholungen konnte nicht geladen werden",
+        "view_store_info": "Shop-Informationen anzeigen",
+        "location_names": "Overkill Lager:Online,GATE Berlin:Gate, Köln Store:Köln,Women Store:Berlin Women,Mainstore:Berlin Main"
+      },
+      "preorder": "Vorbestellung",
+      "prev_product": "Vorgerige",
+      "price": {
+        "unit_price": "Grundpreis",
+        "unit_price_separator": " \/ "
+      },
+      "product_variants": "Produktvarianten",
+      "quantity": "Menge",
+      "quick_buy": "Schnellansicht",
+      "reviews_count": {
+        "one": "{{ count }} bewertung",
+        "other": "{{ count }} bewertungen"
+      },
+      "sale": "Sale",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Versand<\/a> wird im Kaufvorgang berechnet.",
+      "size_chart": "Größentabelle",
+      "sku": "SKU",
+      "sold_out": "Ausverkauft",
+      "value_reduction_html": "Um {{ amount }} reduziert",
+      "vendor": "Anbieter",
+      "view_details": "Alle Details",
+      "xr_button": "In deinem Bereich ansehen",
+      "instore_only": "Instore Only",
+      "no_guest": "Du musst eingeloggt sein um dieses Produkt zu kaufen",
+      "product_details": "Produktdetails",
+      "material_and_care": "Material & Pflege",
+      "size_and_fit": "Größe & Passform",
+      "fit": "Passform",
+      "height": "Höhe",
+      "length": "Länge",
+      "width": "Weite",
+      "manufacturer": "Hersteller-#",
+      "collaboration": "Kollaboration",
+      "choose_your_size": "Wähle deine Größe",
+      "color": "Farbe",
+      "manufacturer_color": "Herstellerfarbe",
+      "releaseType": "Release-Typ",
+      "country_of_origin": "Herkunftsland",
+      "material": "Material",
+      "washcare": "Pflege",
+      "manufacturedFor": "Hergestellt für",
+      "gender": {
+        "men": "Herren",
+        "women": "Damen",
+        "unisex": "Unisex",
+        "kids": "Kinder"
+      },
+      "dimensions": "Abmessungen",
+      "shipping_info": "Versand",
+      "raffle_release": "Raffle endet",
+      "raffle_disclaimer_html": "<b>BITTE BEACHTE:<\/b>\n<p>Wenn du ein Raffle-Produkt in den Warenkorb legst, verlierst du die anderen Produkte darin.<\/p>\n<p>An einem Raffle kannst du nur mit der <b>Zahlungsmethode PayPal<\/b> teilnehmen.<\/p>\n<p>Für die Teilnahme am Raffle wird der Bestellbetrag auf deinem <b>PayPal-Konto reserviert<\/b> und im Gewinnfall eingezogen.<\/p>\n<p>Solltest du nicht gewinnen, wird der <b>reservierte Betrag nach der Auslosung automatisch wieder freigegeben<\/b> (in der Regel innerhalb von 24 Stunden; in Ausnahmefällen kann sich dies um bis zu max. 2 Werktage verzögern (Montag - Freitag, exkl. gesetzliche Feiertage).<\/p>",
+      "raffle_terms_html": "Ich bestätige, dass ich alle Informationen bezüglich des <a href=\"\/de\/pages\/raffle-drawing-process\">Auslosungsprozesses<\/a> gelesen und verstanden habe.<br\/>Ich erkläre mich mit den <a href=\"\/de\/pages\/raffle-conditions-of-participation\">Teilnahmebedingungen<\/a> einverstanden.",
+      "raffle_add_to_cart": "Am Raffle teilnehmen",
+      "raffle_login": "Anmelden, um am Raffle teilzunehmen",
+      "raffle_ended": "Raffle abgelaufen",
+      "raffle_already_participated": "Du hast bereits an diesem Raffle teilgenommen",
+      "timezones": {
+        "CET": "MEZ",
+        "CEST": "MESZ"
+      },
+      "store_available": "Verfügbarkeit",
+      "countries": {
+        "AD": "Andorra",
+        "AE": "Vereinigte Arabische Emirate",
+        "AF": "Afghanistan",
+        "AG": "Antigua und Barbuda",
+        "AI": "Anguilla",
+        "AL": "Albanien",
+        "AM": "Armenien",
+        "AN": "Niederländische Antillen",
+        "AO": "Angola",
+        "AR": "Argentinien",
+        "AS": "Amerikanisch-Samoa",
+        "AT": "Österreich",
+        "AU": "Australien",
+        "AW": "Aruba",
+        "AX": "Åland",
+        "AZ": "Aserbaidschan",
+        "BA": "Bosnien und Herzegowina",
+        "BB": "Barbados",
+        "BD": "Bangladesch",
+        "BE": "Belgien",
+        "BF": "Burkina Faso",
+        "BG": "Bulgarien",
+        "BH": "Bahrain",
+        "BI": "Burundi",
+        "BJ": "Benin",
+        "BM": "Bermuda",
+        "BN": "Brunei Darussalam",
+        "BO": "Bolivien",
+        "BR": "Brasilien",
+        "BS": "Bahamas",
+        "BT": "Bhutan",
+        "BW": "Botswana",
+        "BY": "Belarus",
+        "BZ": "Belize",
+        "CA": "Kanada",
+        "CC": "Kokosinseln",
+        "CF": "Zentralafrikanische Republik",
+        "CG": "Republik Kongo",
+        "CH": "Schweiz",
+        "CI": "Elfenbeinküste",
+        "CK": "Cookinseln",
+        "CL": "Chile",
+        "CM": "Kamerun",
+        "CN": "China",
+        "CO": "Kolumbien",
+        "CR": "Costa Rica",
+        "CU": "Kuba",
+        "CV": "Kap Verde",
+        "CW": "Curaçao",
+        "CY": "Zypern",
+        "CZ": "Tschechische Republik",
+        "DE": "Deutschland",
+        "DJ": "Dschibuti",
+        "DK": "Dänemark",
+        "DM": "Dominica",
+        "DO": "Dominikanische Republik",
+        "DZ": "Algerien",
+        "EC": "Ecuador",
+        "EE": "Estland",
+        "EG": "Ägypten",
+        "EH": "Westsahara",
+        "ER": "Eritrea",
+        "ES": "Spanien",
+        "ET": "Äthiopien",
+        "FI": "Finnland",
+        "FJ": "Fidschi",
+        "FK": "Falklandinseln",
+        "FO": "Färöer",
+        "FR": "Frankreich",
+        "GA": "Gabun",
+        "GB": "Vereinigtes Königreich",
+        "GD": "Grenada",
+        "GE": "Georgien",
+        "GF": "Französisch-Guayana",
+        "GH": "Ghana",
+        "GI": "Gibraltar",
+        "GL": "Grönland",
+        "GM": "Gambia",
+        "GN": "Guinea",
+        "GP": "Guadeloupe",
+        "GQ": "Äquatorialguinea",
+        "GR": "Griechenland",
+        "GT": "Guatemala",
+        "GU": "Guam",
+        "GW": "Guinea-Bissau",
+        "GY": "Guyana",
+        "HK": "Hongkong",
+        "HN": "Honduras",
+        "HR": "Kroatien",
+        "HT": "Haiti",
+        "HU": "Ungarn",
+        "ID": "Indonesien",
+        "IE": "Irland",
+        "IL": "Israel",
+        "IM": "Insel Man",
+        "IN": "Indien",
+        "IQ": "Irak",
+        "IR": "Iran",
+        "IS": "Island",
+        "IT": "Italien",
+        "JE": "Jersey",
+        "JM": "Jamaika",
+        "JO": "Jordanien",
+        "JP": "Japan",
+        "KE": "Kenia",
+        "KG": "Kirgisistan",
+        "KH": "Kambodscha",
+        "KI": "Kiribati",
+        "KM": "Komoren",
+        "KN": "St. Kitts und Nevis",
+        "KR": "Republik Korea (Südkorea)",
+        "KW": "Kuwait",
+        "KY": "Kaimaninseln",
+        "KZ": "Kasachstan",
+        "LA": "Laos, Demokratische Volksrepublik",
+        "LB": "Libanon",
+        "LC": "St. Lucia",
+        "LI": "Liechtenstein",
+        "LK": "Sri Lanka",
+        "LR": "Liberia",
+        "LS": "Lesotho",
+        "LT": "Litauen",
+        "LU": "Luxemburg",
+        "LV": "Lettland",
+        "LY": "Libysch-Arabische Dschamahirija (Libyen)",
+        "MA": "Marokko",
+        "MC": "Monaco",
+        "MD": "Moldawien (Republik Moldau)",
+        "ME": "Montenegro",
+        "MF": "Saint-Martin",
+        "MG": "Madagaskar",
+        "MH": "Marshallinseln",
+        "MK": "Mazedonien",
+        "ML": "Mali",
+        "MM": "Myanmar (Burma)",
+        "MN": "Mongolei",
+        "MO": "Macao",
+        "MP": "Nördliche Marianen",
+        "MQ": "Martinique",
+        "MR": "Mauretanien",
+        "MS": "Montserrat",
+        "MT": "Malta",
+        "MU": "Mauritius",
+        "MV": "Malediven",
+        "MW": "Malawi",
+        "MX": "Mexiko",
+        "MY": "Malaysia",
+        "MZ": "Mosambik",
+        "NA": "Namibia",
+        "NC": "Neukaledonien",
+        "NE": "Niger",
+        "NF": "Norfolkinsel",
+        "NG": "Nigeria",
+        "NI": "Nicaragua",
+        "NL": "Niederlande",
+        "NO": "Norwegen",
+        "NP": "Nepal",
+        "NR": "Nauru",
+        "NU": "Niue",
+        "NZ": "Neuseeland",
+        "OM": "Oman",
+        "PA": "Panama",
+        "PE": "Peru",
+        "PF": "Französisch-Polynesien",
+        "PG": "Papua-Neuguinea",
+        "PH": "Philippinen",
+        "PK": "Pakistan",
+        "PL": "Polen",
+        "PM": "St. Pierre und Miquelon",
+        "PN": "Pitcairninseln",
+        "PR": "Puerto Rico",
+        "PS": "Palästinensische Autonomiegebiete",
+        "PT": "Portugal",
+        "PW": "Palau",
+        "PY": "Paraguay",
+        "QA": "Katar",
+        "RE": "Réunion",
+        "RO": "Rumänien",
+        "RS": "Serbien",
+        "RU": "Russische Föderation",
+        "RW": "Ruanda",
+        "SA": "Saudi-Arabien",
+        "SB": "Salomonen",
+        "SC": "Seychellen",
+        "SD": "Sudan",
+        "SE": "Schweden",
+        "SG": "Singapur",
+        "SH": "St. Helena",
+        "SI": "Slowenien",
+        "SJ": "Svalbard und Jan Mayen",
+        "SK": "Slowakei",
+        "SL": "Sierra Leone",
+        "SM": "San Marino",
+        "SN": "Senegal",
+        "SO": "Somalia",
+        "SR": "Suriname",
+        "SS": "Südsudan",
+        "ST": "São Tomé und Principe",
+        "SV": "El Salvador",
+        "SX": "Sint Maarten",
+        "SY": "Syrien",
+        "SZ": "Swasiland",
+        "TC": "Turks- und Caicosinseln",
+        "TD": "Tschad",
+        "TG": "Togo",
+        "TH": "Thailand",
+        "TJ": "Tadschikistan",
+        "TK": "Tokelau",
+        "TL": "Osttimor (Timor-Leste)",
+        "TM": "Turkmenistan",
+        "TN": "Tunesien",
+        "TO": "Tonga",
+        "TR": "Türkei",
+        "TT": "Trinidad und Tobago",
+        "TV": "Tuvalu",
+        "TW": "Taiwan (Republik China)",
+        "TZ": "Tansania",
+        "UA": "Ukraine",
+        "UG": "Uganda",
+        "US": "Vereinigte Staaten von Amerika",
+        "UY": "Uruguay",
+        "UZ": "Usbekistan",
+        "VE": "Venezuela",
+        "VG": "Britische Jungferninseln",
+        "VI": "Amerikanische Jungferninseln",
+        "VN": "Vietnam",
+        "VU": "Vanuatu",
+        "WF": "Wallis und Futuna",
+        "WS": "Samoa",
+        "XK": "Kosovo",
+        "XW": "Weltweit",
+        "YE": "Jemen",
+        "YT": "Mayotte",
+        "ZA": "Südafrika",
+        "ZM": "Sambia",
+        "ZW": "Simbabwe",
+        "Worldwide": "Weltweit",
+        "EuropeAfricaMiddleEast": "Europa, Afrika, Naher Osten"
+      }
+    },
+    "filtering": {
+      "title": "Filtern",
+      "applied_filters": "Ausgewählte Filtern",
+      "apply": "Anwenden",
+      "clear_all": "Alle entfernen",
+      "filter": "Filter",
+      "out_of_stock_label": "Nicht vorrättig",
+      "show_label": "Anzeigen",
+      "hide_label": "Ausblenden",
+      "min_price_label": "Von",
+      "max_price_label": "Bis",
+      "label_shoe": "Schuhgröße",
+      "label_clothing": "Kleidungsgröße",
+      "labels": {
+        "color": "Farbe",
+        "gender": "Geschlecht"
+      },
+      "fitting_sizes": {
+        "regular_fit": "Normale Passform",
+        "oversized": "Oversized geschnitten",
+        "regular_fit_birkenstock": "Normale Passform",
+        "narrow_fit_birkenstock": "Schmale Passform",
+        "normal": "Normal",
+        "1_size_smaller": "Fällt 1 Größe kleiner aus",
+        "1_2_size_smaller": "Fällt 1\/2 Größe kleiner aus",
+        "2_sizes_bigger": "Fällt 2 Größen größer aus",
+        "1_size_bigger": "Fällt 1 Größe größer aus",
+        "1_2_size_bigger": "Fällt 1\/2 Größe größer aus",
+        "cropped_fit": "Kurz geschnitten",
+        "boxy_fit": "Breite \/ Boxy Passform",
+        "small_fit_slim_fit": "Schmale Passform",
+        "wide_fit_loose_fit": "Weite Passform"
+      },
+      "product_filter_gender": {
+        "men": "Herren",
+        "women": "Damen",
+        "kids": "Kinder"
+      },
+      "product_type": {
+        "backpacks": "Rucksäcke",
+        "balaclavas": "Balaclavas",
+        "bandanas": "Bandanas",
+        "basketballs": "Basketbälle",
+        "beanies": "Beanies",
+        "belts": "Gürtel",
+        "blankets": "Decken",
+        "bomber_varsity_jackets": "Bomber & Varsity Jacken",
+        "books": "Bücher",
+        "boots": "Stiefel",
+        "bottles": "Tassen & Flaschen",
+        "briefcases_messenger_bags": "Messenger & Aktentaschen",
+        "bucket_hats": "Bucket Hats",
+        "cans": "Sprühdosen",
+        "caps": "Caps",
+        "cardigans": "Cardigans",
+        "carpets": "Teppiche",
+        "jewelry": "Schmuck",
+        "cards": "Karten",
+        "cargo_pants": "Cargo Hosen",
+        "casual_pants": "Freizeithosen",
+        "coats": "Mäntel",
+        "collectibles_toys": "Sammlerstücke & Spiele",
+        "dresses": "Kleider",
+        "duffle_bags": "Duffles & Reisetaschen",
+        "fleece_jackets": "Fleece Jacken",
+        "gloves": "Handschuhe",
+        "graffiti_media_accessories": "Graffiti Medien & Zubehör",
+        "graffiti_sticker": "Graffiti Sticker",
+        "hats": "Hüte",
+        "headbands": "Kopfbänder",
+        "high_top_sneakers": "High Top Sneaker",
+        "hip_waist_bags": "Gürteltaschen",
+        "hoodies": "Hoodies",
+        "incense_candles": "Düfte & Kerzen",
+        "jackets": "Jacken",
+        "jeans": "Jeans",
+        "lofers_lace_ups": "Loafers & Schnürschuhe",
+        "longsleeves": "Longsleeves",
+        "low_top_sneakers": "Low Top Sneaker",
+        "magazines": "Magazine",
+        "markers": "Marker",
+        "mid_tops_sneakers": "Mid Tops Sneaker",
+        "mini_trains": "Mini Züge",
+        "mugs_bottles": "Tassen & Flaschen",
+        "other_home_accessories": "Sonstige Home Accessoires",
+        "other_prints": "Sonstige Prints",
+        "other_sports_equipment": "Sonstiges Sport-Equipment",
+        "outdoor_accessories": "Outdoor Accessoires",
+        "overalls": "Overalls",
+        "parkas": "Parkas",
+        "polo_shirts": "Polo Shirts",
+        "puffer_jackets": "Puffer Jacken",
+        "scarves": "Schals",
+        "shirts": "Hemden",
+        "shorts": "Shorts",
+        "shoulder_cross_body_bags": "Schulter- & Umhängetaschen",
+        "skateboards": "Skateboards",
+        "skirts": "Röcke",
+        "slides_sandals_slippers": "Slides, Sandalen & Slipper",
+        "sneaker": "Sneaker",
+        "sneaker_care": "Sneaker Pflege",
+        "sneakers": "Sneaker",
+        "socks": "Strümpfe",
+        "sports_bottles": "Sportflaschen",
+        "spray_cans": "Sprühdosen",
+        "sweat_track_pants": "Trainings Hosen",
+        "sweater_vests": "Pullunder",
+        "sweatshirts": "Pullover",
+        "swimwear": "Badekleidung",
+        "t_shirts": "T-Shirts",
+        "tops": "Tops",
+        "tote_bags_shoppers": "Totes & Shopper",
+        "towels": "Handtücher",
+        "track_jackets": "Trainings Jacken",
+        "trays": "Tabletts",
+        "underwear": "Unterwäsche",
+        "various": "Sonstiges",
+        "vests": "Westen",
+        "wallets_cases": "Geldbörsen & Etuis",
+        "windbreaker": "Windbreaker Jacken"
+      },
+      "product_filter_color": {
+        "beige": "Beige",
+        "black": "Schwarz",
+        "blue": "Blau",
+        "brown": "Braun",
+        "camouflage": "Camouflage",
+        "gold": "Gold",
+        "gray": "Grau",
+        "green": "Grün",
+        "purple": "Lila",
+        "multicolored": "Mehrfarbig",
+        "olive": "Oliv",
+        "orange": "Orange",
+        "petrol": "Petrol",
+        "pink": "Pink",
+        "red": "Rot",
+        "silver": "Silber",
+        "transparent": "Transparent",
+        "turquoise": "Türkis",
+        "violet": "Violett",
+        "white": "Weiß",
+        "yellow": "Gelb",
+        "bronze-copper": "bronze-kupfer"
+      }
+    },
+    "sorting": {
+      "sort_by_label": "Sortieren nach"
+    },
+    "inventory": {
+      "in_stock": "Auf Lager",
+      "low_stock": "Begrenzter Vorrat",
+      "only_x_left": "{{ quantity }} auf Lager",
+      "x_left": "{{ quantity }} auf Lager, versandbereit"
+    },
+    "transfers": {
+      "will_not_ship_until": "Wird nach dem {{ date }} versendet",
+      "will_be_in_stock_after": "Wird nach dem {{ date }} auf Lager sein",
+      "waiting_for_stock": "Inventar auf dem Weg"
+    },
+    "variant": {
+      "no_stock": "Ausverkauft",
+      "non_existent": "Nicht verfügbar"
+    }
+  },
+  "sections": {
+    "header": {
+      "account": "Konto",
+      "search": "Suchen",
+      "cart": "Einkaufswagen"
+    },
+    "footer": {
+      "copyright_html": "&copy; {{ year }} <a href=\"{{ shop_url }}\">{{ shop_name }}<\/a>."
+    },
+    "faq_header": {
+      "search_label": "Suchen Sie nach häufig gestellten Fragen",
+      "search_placeholder": "Suchen Sie nach häufig gestellten Fragen"
+    },
+    "collection": {
+      "empty": "Keine Produkte gefunden",
+      "product_count": {
+        "one": "{{ count }} produkt",
+        "other": "{{ count }} produkte"
+      },
+      "grid_layout": "Produktraster",
+      "list_layout": "Produktliste",
+      "view_all_related_collections": "Alle anzeigen...",
+      "featured_sort_title": "Neuste"
+    },
+    "countdown": {
+      "days_short": "Tage",
+      "hours_short": "Stunden",
+      "minutes_short": "Minuten",
+      "seconds_short": "Sekunden",
+      "end_date": "Endet {{ date }}"
+    },
+    "featured_collection": {
+      "view_all": "Alle anzeigen"
+    },
+    "slideshow": {
+      "load_slide": "Folie laden",
+      "carousel": "Karussell",
+      "slide": "Folie"
+    }
+  },
+  "templates": {
+    "404": {
+      "title": "Seite nicht gefunden",
+      "subtext": "Die angeforderte Seite existiert nicht.",
+      "link": "Einkauf fortzusetzen"
+    },
+    "password": {
+      "general": {
+        "login_link": "Mit Passwort betreten",
+        "powered_by": "Dieser Shop wird unterstützt von"
+      },
+      "login_form": {
+        "admin_link_html": "Bist du der Shop-Inhaber? <a href=\"\/admin\">Hier einloggen<\/a>",
+        "error": "Falsches Passwort!",
+        "heading": "Shop mit Passwort betreten",
+        "password_label": "Passwort",
+        "password_placeholder": "Ihr Passwort",
+        "submit": "Eingeben"
+      },
+      "signup_form": {
+        "email_label": "E-Mail",
+        "email_placeholder": "Ihre E-Mail-Adresse",
+        "submit": "Eingeben",
+        "success": "Wir senden Ihnen eine E-Mail, kurz bevor wir eröffnen!"
+      }
+    }
+  },
+  "newsletter": {
+    "label": "E-Mail",
+    "placeholder": "Deine E-Mail-Adresse",
+    "button_label": "Abonnieren",
+    "success": "Danke für deine Anmeldung"
+  },
+  "contact": {
+    "form": {
+      "name": "Name",
+      "email": "E-Mail",
+      "phone": "Telefonnummer",
+      "message": "Kommentar",
+      "send": "Senden",
+      "post_success": "Danke, dass du uns kontaktiert hast. Wir werden uns so schnell wie möglich bei dir melden."
+    }
+  },
+  "blogs": {
+    "article": {
+      "back_to_blog": "Zurück zum {{ title }}",
+      "no_matches": "Sie haben noch keine Artikel! Sobald Sie einen geschrieben haben, wird er hier angezeigt.",
+      "read_more": "Weiterlesen"
+    },
+    "comments": {
+      "title": "Kommentare",
+      "form_title": "Hinterlasse einen Kommentar",
+      "name": "Name",
+      "email": "E-Mail",
+      "message": "Kommentar",
+      "post": "Kommentar posten",
+      "moderated": "Bitte beachte, dass Kommentare vor der Veröffentlichung freigegeben werden müssen.",
+      "success": "Dein Kommentar wurde erfolgreich gepostet! Vielen Dank!"
+    },
+    "filtering": {
+      "all": "Alle",
+      "filter_by": "Filter"
+    },
+    "pagination": {
+      "newer_articles": "Neuere Artikle",
+      "older_articles": "Aeltere Artikel"
+    },
+    "tags": {
+      "label": "Getaggt"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Dein Warenkorb",
+      "backorder": "Das Produkt ist auf Lager und wird versandt, sobald es wieder verfügbar ist.",
+      "free_shipping": "Deine Bestellung ist versandkostenfrei!",
+      "free_shipping_deficit_html": "Gib <strong>{{ amount }}<\/strong> mehr für <strong>kostenlosen Versand<\/strong> aus!",
+      "taxes_and_shipping_at_checkout": "Steuern und Versand werden im Kaufvorgang berechnet",
+      "taxes_and_shipping_at_checkout_html": "Steuern und <a href=\"{{ link }}\">Versand<\/a> werden im Kaufvorgang berechnet.",
+      "taxes_included_shipping_at_checkout": "Inklusive Steuern, Versand wird im Kaufvorgang berechnet",
+      "taxes_included_shipping_at_checkout_html": "Inklusive Steuern. <a href=\"{{ link }}\">Versand <\/a> wird im Kaufvorgang berechnet",
+      "update": "Warenkorb aktualisieren",
+      "discount-code-info_html": "<strong>Hinweis:<\/strong> Rabattcodes können im nächsten Schritt eingegeben werden.",
+      "money-saved": "Du sparst:"
+    },
+    "items": {
+      "product": "Produkt",
+      "quantity": "Anzahl",
+      "increase_quantity": "Menge erhöhen",
+      "decrease_quantity": "Menge verringern",
+      "price": "Preis",
+      "remove": "Löschen",
+      "total": "Gesamtsumme",
+      "quantity_error": "Du kannst deinem Warenkorb nur {{ quantity }} Stück dieses Artikels hinzufügen."
+    },
+    "note": {
+      "label": "Bestellhinweise"
+    },
+    "shipping_calculator": {
+      "show": "Kostenvoranschlag für den Versand",
+      "hide": "Versandkostenrechner ausblenden",
+      "title": "Erhalte eine Versandkostenschätzungen",
+      "country": "Land",
+      "province": "Bundesland\/Provinz",
+      "zip": "PLZ",
+      "submit": "Berechnung",
+      "single_rate": "Es ist eine Versandrate verfügbar für:",
+      "multiple_rates": "Versandkosten verfügbar, beginnend bei:",
+      "no_rates": "Wir liefern nicht an dieses Ziel.",
+      "error": "Bitte passe Folgendes an:"
+    },
+    "summary": {
+      "subtotal": "Zwischensumme",
+      "checkout": "Jetzt kaufen",
+      "continue_shopping": "Weiter shoppen"
+    },
+    "terms": {
+      "agreement_html": "Ich stimme den <a href=\"{{ terms_url }}\" target=\"_blank\">AGB und Rückerstattungsrichtlinien<\/a> zu",
+      "confirmation": "Du musst den AGB & Rückerstattungsrichtlinien zustimmen, bevor du fortfährst."
+    }
+  },
+  "customer": {
+    "account": {
+      "title": "Konto",
+      "view_addresses": "Adressen anzeigen",
+      "home": "Zurück zu Kontodetails",
+      "log_out": "Abmelden"
+    },
+    "activate_account": {
+      "title": "Konto aktivieren",
+      "subtext": "Erstelle ein Passwort, um dein Konto zu aktiveren.",
+      "password": "Passwort",
+      "password_confirm": "Passwort bestätigen",
+      "submit": "Konto aktivieren",
+      "cancel": "Einladung ablehnen"
+    },
+    "addresses": {
+      "title": "Adressen",
+      "default": "Standard",
+      "edit": "Bearbeiten",
+      "edit_address": "Adresse bearbeiten",
+      "delete": "Löschen",
+      "delete_confirm": "Bist du sicher, dass du diese Adresse löschen möchtest?",
+      "add_new": "Neue Adresse hinzufügen",
+      "first_name": "Vorname",
+      "last_name": "Nachname",
+      "company": "Unternehmen",
+      "address1": "Adresse 1",
+      "address2": "Adresse 2",
+      "city": "Ort",
+      "country": "Land\/Region",
+      "province": "Bundesland\/Provinz",
+      "zip": "PLZ",
+      "phone": "Telefonnummer",
+      "set_default": "Als Standard-Adresse festlegen",
+      "add": "Adresse hinzufügen",
+      "update": "Adresse aktualisieren",
+      "cancel": "Abbrechen"
+    },
+    "login": {
+      "title": "Login",
+      "email": "E-Mail",
+      "password": "Passwort",
+      "forgot_password": "Hast du dein Passwort vergessen?",
+      "sign_in": "Anmelden",
+      "guest_title": "Als Gast fortsetzen",
+      "guest_continue": "Fortfahren"
+    },
+    "order": {
+      "title": "Bestellung {{ name }}",
+      "date": "Aufgegeben am {{ date }}",
+      "cancelled_on": "Bestellung storniert am {{ date }}",
+      "cancelled_reason": "Grund: {{ reason }}",
+      "billing_address": "Rechnungsadresse",
+      "payment_status": "Zahlungsstatus",
+      "fulfillment_status": "Fulfillmentstatus",
+      "fulfilled_on": "Ausgeführt am {{ date }}",
+      "shipping": "Versand",
+      "shipping_address": "Lieferadresse",
+      "product": "Produkt",
+      "sku": "SKU",
+      "quantity": "Menge",
+      "price": "Preis",
+      "subtotal": "Zwischensumme",
+      "tax": "Steuer",
+      "total": "Gesamtsumme",
+      "raffle": {
+        "cancel_button": "Teilnahme stornieren",
+        "cancel_success": "Die Teilnahme an der Verlosung wurde erfolgreich storniert.",
+        "errors": {
+          "no_cancellation": "Die Teilnahme an der Verlosung kann nicht storniert werden.",
+          "entry_not_found": "Gewinnspielteilnahme nicht gefunden",
+          "general_error": "Ein Fehler ist aufgetreten. Bitte versuche es später erneut.",
+          "unauthorized": "Du bist nicht berechtigt, diese Aktion auszuführen."
+        },
+        "winner": "Gewinner",
+        "loser": "Verlierer"
+      }
+    },
+    "orders": {
+      "order_number": "Bestellung",
+      "view_order": "Bestellung ansehen",
+      "date": "Datum",
+      "payment_status": "Zahlungsstatus",
+      "fulfillment_status": "Fulfillmentstatus",
+      "total": "Gesamtsumme",
+      "none": "Du hast noch keine Bestellungen aufgegeben."
+    },
+    "recover_password": {
+      "title": "Setze dein Passwort zurück",
+      "subtext": "Wir werden dir eine E-Mail zum Zurücksetzen deines Passworts schicken",
+      "email": "E-Mail",
+      "submit": "Erstellen",
+      "cancel": "Abbrechen",
+      "success": "Wir haben dir eine E-Mail mit einem Link zum Aktualisieren deines Passworts geschickt."
+    },
+    "register": {
+      "title": "Konto erstellen",
+      "first_name": "Vorname",
+      "last_name": "Nachname",
+      "email": "E-Mail",
+      "password": "Passwort",
+      "submit": "Erstellen",
+      "have_account": "Du hast bereits ein Konto?",
+      "log_in": "Mit Kundenkonto anmelden"
+    },
+    "reset_password": {
+      "title": "Passwort für Konto zurücksetzen",
+      "subtext": "Neues Passwort eingeben",
+      "password": "Passwort",
+      "password_confirm": "Passwort bestätigen",
+      "submit": "Passwort zurücksetzen"
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "title": "Hier ist dein Geschenkgutschein im Wert von {{ value }} für {{ shop }}!",
+      "subtext": "Dein Geschenkgutschein",
+      "expired": "Abgelaufen",
+      "remaining_html": "{{ balance }} verbleibend",
+      "qr_image_alt": "QR-Code - Scannen, um Geschenkgutschein einzulösen",
+      "code": "Gutscheincode",
+      "add_to_apple_wallet": "Zu Apple Wallet hinzufügen",
+      "shop_link": "Weiter shoppen",
+      "print": "Drucken"
+    },
+    "recipient": {
+      "checkbox": "Ich möchte dies als Geschenk senden",
+      "email_label_optional": "Empfänger E-Mail",
+      "email_label_required": "Empfänger E-Mail *",
+      "name_label": "Name des Empfängers",
+      "message_label": "Nachricht",
+      "max_characters": "Maximal {{ max_chars }} Zeichens",
+      "send_on_label": "Senden an"
+    }
+  },
+  "onboarding": {
+    "article": {
+      "title": "Blog-Beitrag",
+      "excerpt": "Verschaffe deinen Kunden eine Übersicht über deinen Blog-Beitrag.",
+      "author": "Name des Autors"
+    },
+    "blog": {
+      "empty": "Sie haben noch keine Artikel! Sobald Sie einen geschrieben haben, wird er hier angezeigt."
+    },
+    "collection": {
+      "title": "Name deiner Kategorie"
+    },
+    "product": {
+      "title": "Beispiel für Produkttitel",
+      "vendor": "Anbieter",
+      "sku": "SKU1234",
+      "description": "Eine Beschreibung des Produkts, einschließlich Details wie Verarbeitungsqualität, verwendete Materialien und Kaufgründe."
+    }
+  },
+  "shopify": {
+    "checkout": {
+      "contact": {
+        "address1_label": "Straße und Hausnummer \/ Packstation und Nummer (nur DE)",
+        "optional_address2_label": "Postnummer (8 - 10 Zeichen), Wohnung, Zimmer, usw. (optional)"
+      },
+      "marketing": {
+        "accept_marketing_checkbox_label": "Ich möchte per E-Mail über Neuigkeiten, Angebote und Gutscheine von Overkill informiert werden (Abmeldung jederzeit möglich)."
+      },
+      "alternative_payment_method_banner": {
+        "express_checkout": "Express-Zahlung"
+      }
+    }
+  },
+  "customer_accounts": {
+    "order_details": {
+      "marketing_checkbox_label": "Ich möchte per E-Mail über Neuigkeiten, Angebote und Gutscheine von Overkill informiert werden (Abmeldung jederzeit möglich)."
+    }
+  }
+}

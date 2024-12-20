@@ -1,0 +1,909 @@
+{
+  "general": {
+    "localization": {
+      "country_label": "Country/Region",
+      "countries_error": "Error fetching countries, please try again.",
+      "language_label": "Language",
+      "update": "Update"
+    },
+    "icon_labels": {
+      "close": "Close",
+      "play": "Play"
+    },
+    "labels": {
+      "please_select": "Please select"
+    },
+    "navigation": {
+      "menu": "Menu",
+      "show_links": "Show links",
+      "back": "Back",
+      "close": "Close",
+      "featured": "Featured"
+    },
+    "breadcrumbs": {
+      "title": "Breadcrumbs",
+      "home": "Home",
+      "collections": "Collections"
+    },
+    "pagination": {
+      "next": "Next",
+      "previous": "Previous"
+    },
+    "search": {
+      "title": "Search",
+      "input_label": "Search",
+      "placeholder": "Search our store",
+      "submit": "Search",
+      "close": "Close",
+      "results_with_count": {
+        "one": "We found {{ count }} result",
+        "other": "We found {{ count }} results"
+      },
+      "no_results": "No results found for \"{{ terms }}\".",
+      "no_results_without_terms": "Sorry, we couldnʼt find any results",
+      "suggestions": "Suggestions",
+      "pages": "Pages",
+      "view_all": "View all search results"
+    },
+    "slider": {
+      "next": "Next",
+      "previous": "Previous",
+      "of": "of"
+    },
+    "social": {
+      "share_heading": "Share",
+      "share_on_facebook": "Share on Facebook",
+      "share_on_twitter": "Tweet on X",
+      "share_on_pinterest": "Pin on Pinterest",
+      "follow_shop": "{{ shop_name }} on {{ social_platform }}"
+    },
+    "meta": {
+      "page": "Page {{ page }}",
+      "tags": "Tagged \"{{ tags }}\""
+    }
+  },
+  "accessibility": {
+    "skip_to_content": "Skip to content",
+    "close": "Close",
+    "main_navigation": "Primary",
+    "secondary_navigation": "Secondary",
+    "star_reviews_info": "{{ rating_value }} out of {{ rating_max }} stars",
+    "view_details": "View details"
+  },
+  "products": {
+    "meta_html": "Order {{ brand }} {{ product_title }} | {{ manufacturer_sku }} | {{ color }} at OVERKILL now - ✓ Free shipping in Germany from 80 € ✓ Free returns in Germany from 40 €",
+    "product": {
+      "add_to_cart": "Add to cart",
+      "added_to_cart_with_link_html": "Added to your <a href=\"{{ cart_url }}\">Cart</a>",
+      "backorder": "is backordered and will ship as soon as it is back in stock.",
+      "barcode": "Barcode:",
+      "choose_a": "Choose a",
+      "description": "Description",
+      "read_more": "Read more",
+      "show_less": "Show Less",
+      "from": "From",
+      "include_taxes": "included",
+      "media": {
+        "gallery_viewer": "Gallery Viewer",
+        "load_image": "Load image {{ index }} in gallery view",
+        "play_video": "Play video"
+      },
+      "more_swatches": "+ {{ count }} more",
+      "new": "New arrival",
+      "next_product": "Next",
+      "percent_reduction": "{{ amount }}% off",
+      "pickup_availability": {
+        "check_other_stores": "Check availability at other stores",
+        "pick_up_available": "Pickup available",
+        "pick_up_available_at_html": "Pickup available at <strong>{{ location_name }}</strong>",
+        "pick_up_unavailable": "Pickup currently unavailable",
+        "pick_up_unavailable_at_html": "Pickup currently unavailable at <strong>{{ location_name }}</strong>",
+        "refresh": "Refresh",
+        "unavailable": "Couldn't load pickup availability",
+        "view_store_info": "View store information",
+        "location_names": "Overkill Lager:Online,GATE Berlin:Gate, Köln Store:Cologne,Women Store:Berlin Women,Mainstore:Berlin Main"
+      },
+      "preorder": "Pre-order",
+      "prev_product": "Previous",
+      "price": {
+        "unit_price": "Unit price",
+        "unit_price_separator": " / "
+      },
+      "product_variants": "Product variants",
+      "quantity": "Quantity",
+      "quick_buy": "Quick buy",
+      "reviews_count": {
+        "one": "{{ count }} review",
+        "other": "{{ count }} reviews"
+      },
+      "sale": "Sale",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Shipping</a> calculated at checkout.",
+      "size_chart": "Size guide",
+      "sku": "SKU",
+      "sold_out": "Sold out",
+      "value_reduction_html": "{{ amount }} off",
+      "vendor": "By",
+      "view_details": "View details",
+      "xr_button": "View in your space",
+      "instore_only": "Instore Only",
+      "no_guest": "You have to be logged in to buy this product",
+      "product_details": "Product Details",
+      "material_and_care": "Material & care",
+      "size_and_fit": "Size & fit",
+      "fit": "Fit",
+      "height": "Height",
+      "length": "Length",
+      "width": "Width",
+      "manufacturer": "Manufacturer-#",
+      "collaboration": "Collaboration",
+      "choose_your_size": "Choose your size",
+      "color": "Color",
+      "manufacturer_color": "Manufacturer color",
+      "releaseType": "Release-Type",
+      "country_of_origin": "Country of origin",
+      "material": "Material",
+      "washcare": "Washcare",
+      "manufacturedFor": "Manufactured for",
+      "gender": {
+        "men": "Men",
+        "women": "Women"
+      },
+      "dimensions": "Dimensions",
+      "shipping_info": "Shipping",
+      "raffle_release": "Raffle Release",
+      "raffle_disclaimer_html": "<b>PLEASE NOTE</b> <p>If you add a Raffle product to your shopping cart, you will lose the other products in it.</p> <p>You can only participate in a raffle using <b>PayPal as your payment method</b>.</p> <p>For participation in the Raffle, the order <b>amount will be reserved on your PayPal account</b> until the Raffle ends and collected if you win.</p> <p>If you do not win, the reserved <b>amount will be automatically released</b> after the draw (usually within 24 hours; in exceptional cases this may be delayed by up to a maximum of 2 working days (Monday - Friday, excluding public holidays).</p>",
+      "raffle_terms_html": "I confirm that I have read and understood all information regarding the <a href=\"/pages/raffle-drawing-process\">drawing process</a>.<br/>I agree to the <a href=\"/pages/raffle-conditions-of-participation\">conditions of participation</a>.",
+      "raffle_add_to_cart": "Participate in the Raffle",
+      "raffle_login": "Login to participate in the Raffle",
+      "raffle_ended": "Raffle ended",
+      "raffle_already_participated": "You have already participated in this raffle",
+      "timezones": {
+        "CET": "CET",
+        "CEST": "CEST"
+      },
+      "store_available": "Availability",
+      "countries": {
+        "AD": "Andorra",
+        "AE": "United Arab Emirates",
+        "AF": "Afghanistan",
+        "AG": "Antigua and Barbuda",
+        "AI": "Anguilla",
+        "AL": "Albania",
+        "AM": "Armenia",
+        "AN": "Netherlands Antilles",
+        "AO": "Angola",
+        "AR": "Argentina",
+        "AS": "American Samoa",
+        "AT": "Austria",
+        "AU": "Australia",
+        "AW": "Aruba",
+        "AX": "Åland Islands",
+        "AZ": "Azerbaijan",
+        "BA": "Bosnia and Herzegovina",
+        "BB": "Barbados",
+        "BD": "Bangladesh",
+        "BE": "Belgium",
+        "BF": "Burkina Faso",
+        "BG": "Bulgaria",
+        "BH": "Bahrain",
+        "BI": "Burundi",
+        "BJ": "Benin",
+        "BM": "Bermuda",
+        "BN": "Brunei Darussalam",
+        "BO": "Bolivia",
+        "BR": "Brazil",
+        "BS": "Bahamas",
+        "BT": "Bhutan",
+        "BW": "Botswana",
+        "BY": "Belarus",
+        "BZ": "Belize",
+        "CA": "Canada",
+        "CC": "Cocos Islands",
+        "CF": "Central African Republic",
+        "CG": "Congo",
+        "CH": "Switzerland",
+        "CI": "Côte D'Ivoire",
+        "CK": "Cook Islands",
+        "CL": "Chile",
+        "CM": "Cameroon",
+        "CN": "China",
+        "CO": "Colombia",
+        "CR": "Costa Rica",
+        "CU": "Cuba",
+        "CV": "Cape Verde",
+        "CW": "Curacao",
+        "CY": "Cyprus",
+        "CZ": "Czech Republic",
+        "DE": "Germany",
+        "DJ": "Djibouti",
+        "DK": "Denmark",
+        "DM": "Dominica",
+        "DO": "Dominican Republic",
+        "DZ": "Algeria",
+        "EC": "Ecuador",
+        "EE": "Estonia",
+        "EG": "Egypt",
+        "EH": "Western Sahara",
+        "ER": "Eritrea",
+        "ES": "Spain",
+        "ET": "Ethiopia",
+        "FI": "Finland",
+        "FJ": "Fiji",
+        "FK": "Falkland Islands",
+        "FO": "Faroe Islands",
+        "FR": "France",
+        "GA": "Gabon",
+        "GB": "United Kingdom",
+        "GD": "Grenada",
+        "GE": "Georgia",
+        "GF": "French Guiana",
+        "GH": "Ghana",
+        "GI": "Gibraltar",
+        "GL": "Greenland",
+        "GM": "Gambia",
+        "GN": "Guinea",
+        "GP": "Guadeloupe",
+        "GQ": "Equatorial Guinea",
+        "GR": "Greece",
+        "GT": "Guatemala",
+        "GU": "Guam",
+        "GW": "Guinea-Bissau",
+        "GY": "Guyana",
+        "HK": "Hong Kong",
+        "HN": "Honduras",
+        "HR": "Croatia",
+        "HT": "Haiti",
+        "HU": "Hungary",
+        "ID": "Indonesia",
+        "IE": "Ireland",
+        "IL": "Israel",
+        "IM": "Isle of Man",
+        "IN": "India",
+        "IQ": "Iraq",
+        "IR": "Iran",
+        "IS": "Iceland",
+        "IT": "Italy",
+        "JE": "Jersey",
+        "JM": "Jamaica",
+        "JO": "Jordan",
+        "JP": "Japan",
+        "KE": "Kenya",
+        "KG": "Kyrgyzstan",
+        "KH": "Cambodia",
+        "KI": "Kiribati",
+        "KM": "Comoros",
+        "KN": "Saint Kitts and Nevis",
+        "KR": "Republic of Korea",
+        "KW": "Kuwait",
+        "KY": "Cayman Islands",
+        "KZ": "Kazakhstan",
+        "LA": "Lao People's Democratic Republic",
+        "LB": "Lebanon",
+        "LC": "Saint Lucia",
+        "LI": "Liechtenstein",
+        "LK": "Sri Lanka",
+        "LR": "Liberia",
+        "LS": "Lesotho",
+        "LT": "Lithuania",
+        "LU": "Luxembourg",
+        "LV": "Latvia",
+        "LY": "Libyan Arab Jamahiriya",
+        "MA": "Morocco",
+        "MC": "Monaco",
+        "MD": "Republic of Moldova",
+        "ME": "Montenegro",
+        "MF": "Saint Martin",
+        "MG": "Madagascar",
+        "MH": "Marshall Islands",
+        "MK": "Macedonia",
+        "ML": "Mali",
+        "MM": "Myanmar",
+        "MN": "Mongolia",
+        "MO": "Macao",
+        "MP": "Northern Mariana Islands",
+        "MQ": "Martinique",
+        "MR": "Mauritania",
+        "MS": "Montserrat",
+        "MT": "Malta",
+        "MU": "Mauritius",
+        "MV": "Maldives",
+        "MW": "Malawi",
+        "MX": "Mexico",
+        "MY": "Malaysia",
+        "MZ": "Mozambique",
+        "NA": "Namibia",
+        "NC": "New Caledonia",
+        "NE": "Niger",
+        "NF": "Norfolk Island",
+        "NG": "Nigeria",
+        "NI": "Nicaragua",
+        "NL": "Netherlands",
+        "NO": "Norway",
+        "NP": "Nepal",
+        "NR": "Nauru",
+        "NU": "Niue",
+        "NZ": "New Zealand",
+        "OM": "Oman",
+        "PA": "Panama",
+        "PE": "Peru",
+        "PF": "French Polynesia",
+        "PG": "Papua New Guinea",
+        "PH": "Philippines",
+        "PK": "Pakistan",
+        "PL": "Poland",
+        "PM": "Saint Pierre and Miquelon",
+        "PN": "Pitcairn",
+        "PR": "Puerto Rico",
+        "PS": "Palestinian Territory, Occupied ",
+        "PT": "Portugal",
+        "PW": "Palau",
+        "PY": "Paraguay",
+        "QA": "Qatar",
+        "RE": "Reunion",
+        "RO": "Romania",
+        "RS": "Serbia",
+        "RU": "Russian Federation",
+        "RW": "Rwanda",
+        "SA": "Saudi Arabia",
+        "SB": "Solomon Islands",
+        "SC": "Seychelles",
+        "SD": "Sudan",
+        "SE": "Sweden",
+        "SG": "Singapore",
+        "SH": "Saint Helena",
+        "SI": "Slovenia",
+        "SJ": "Svalbard and Jan Mayen",
+        "SK": "Slovakia",
+        "SL": "Sierra Leone",
+        "SM": "San Marino",
+        "SN": "Senegal",
+        "SO": "Somalia",
+        "SR": "Suriname",
+        "SS": "South Sudan",
+        "ST": "Sao Tome and Principe",
+        "SV": "El Salvador",
+        "SX": "Sint Maarten",
+        "SY": "Syria",
+        "SZ": "Swaziland",
+        "TC": "Turks and Caicos Islands",
+        "TD": "Chad",
+        "TG": "Togo",
+        "TH": "Thailand",
+        "TJ": "Tajikistan",
+        "TK": "Tokelau",
+        "TL": "Timor-Leste",
+        "TM": "Turkmenistan",
+        "TN": "Tunisia",
+        "TO": "Tonga",
+        "TR": "Turkey",
+        "TT": "Trinidad and Tobago",
+        "TV": "Tuvalu",
+        "TW": "Taiwan Province of China",
+        "TZ": "Tanzania",
+        "UA": "Ukraine",
+        "UG": "Uganda",
+        "US": "United States",
+        "UY": "Uruguay",
+        "UZ": "Uzbekistan",
+        "VE": "Venezuela",
+        "VG": "Virgin Islands British",
+        "VI": "Virgin Islands U.S.",
+        "VN": "Viet Nam",
+        "VU": "Vanuatu",
+        "WF": "Wallis and Futuna",
+        "WS": "Samoa",
+        "XK": "Kosovo",
+        "XW": "Worldwide",
+        "YE": "Yemen",
+        "YT": "Mayotte",
+        "ZA": "South Africa",
+        "ZM": "Zambia",
+        "ZW": "Zimbabwe",
+        "Worldwide": "Worldwide"
+      }
+    },
+    "filtering": {
+      "title": "Filters",
+      "applied_filters": "Applied Filters",
+      "apply": "Apply",
+      "clear_all": "Clear all",
+      "filter": "Filter",
+      "out_of_stock_label": "Out of stock",
+      "show_label": "Show",
+      "hide_label": "Hide",
+      "min_price_label": "From",
+      "max_price_label": "To",
+      "label_shoe": "Shoe Size",
+      "label_clothing": "Clothing Size",
+      "labels": {
+        "color": "Color",
+        "gender": "Gender"
+      },
+      "fitting_sizes": {
+        "regular_fit": "Regular fit",
+        "oversized": "Oversized",
+        "regular_fit_birkenstock": "Regular fit (Birkenstock)",
+        "narrow_fit_birkenstock": "Narrow fit (Birkenstock)",
+        "normal": "Normal",
+        "1_size_smaller": "1 size smaller",
+        "1_2_size_smaller": "1/2 size smaller",
+        "2_sizes_bigger": "2 sizes bigger",
+        "1_size_bigger": "1 size bigger",
+        "1_2_size_bigger": "1/2 size bigger",
+        "cropped_fit": "Cropped Fit",
+        "boxy_fit": "Boxy Fit",
+        "small_fit_slim_fit": "Small fit / Slim fit",
+        "wide_fit_loose_fit": "Wide fit / Loose fit"
+      },
+      "product_filter_gender": {
+        "men": "Men",
+        "women": "Women",
+        "kids": "Children"
+      },
+      "product_type": {
+        "backpacks": "Rucksacks",
+        "balaclavas": "Balaclavas",
+        "bandanas": "Bandanas",
+        "basketballs": "Basketballs",
+        "beanies": "Beanies",
+        "belts": "Belts",
+        "blankets": "Blankets",
+        "bomber_varsity_jackets": "Bomber and varsity jackets",
+        "books": "Books",
+        "boots": "Boots",
+        "bottles": "Bottles",
+        "briefcases_messenger_bags": "Briefcases and messenger bags",
+        "bucket_hats": "Bucket hats",
+        "cans": "Cans",
+        "caps": "Caps",
+        "cardigans": "Cardigans",
+        "cards": "Cards",
+        "cargo_pants": "Cargo pants",
+        "carpets": "Carpets",
+        "casual_pants": "Casual pants",
+        "coats": "Coats",
+        "collectibles_toys": "Collectibles and toys",
+        "dresses": "Dresses",
+        "duffle_bags": "Duffle bags",
+        "fleece_jackets": "Fleece jackets",
+        "gloves": "Gloves",
+        "graffiti_media_accessories": "Graffiti media accessories",
+        "graffiti_sticker": "Graffiti sticker",
+        "hats": "Hats",
+        "headbands": "Headbands",
+        "high_top_sneakers": "High-top sneakers",
+        "hip_waist_bags": "Hip and waist bags",
+        "hoodies": "Hoodies",
+        "incense_candles": "Incense candles",
+        "jackets": "Jackets",
+        "jeans": "Jeans",
+        "jewelry": "Jewelry",
+        "lofers_lace_ups": "Loafers and lace-ups",
+        "longsleeves": "Long-sleeve shirts",
+        "low_top_sneakers": "Low-top sneakers",
+        "magazines": "Magazines",
+        "markers": "Markers",
+        "mid_tops_sneakers": "Mid-top sneakers",
+        "mini_trains": "Mini trains",
+        "mugs_bottles": "Mugs and bottles",
+        "other_home_accessories": "Other home accessories",
+        "other_prints": "Other prints",
+        "other_sports_equipment": "Other sports equipment",
+        "outdoor_accessories": "Outdoor accessories",
+        "overalls": "Overalls",
+        "parkas": "Parkas",
+        "polo_shirts": "Polo shirts",
+        "puffer_jackets": "Puffer jackets",
+        "scarves": "Scarves",
+        "shirts": "Shirts",
+        "shorts": "Shorts",
+        "shoulder_cross_body_bags": "Shoulder and cross-body bags",
+        "skateboards": "Skateboards",
+        "skirts": "Skirts",
+        "slides_sandals_slippers": "Slides, sandals, and slippers",
+        "sneaker": "Sneakers",
+        "sneaker_care": "Sneaker care",
+        "sneakers": "Sneakers",
+        "socks": "Socks",
+        "sports_bottles": "Sports bottles",
+        "spray_cans": "Spray cans",
+        "sweat_track_pants": "Sweat track pants",
+        "sweater_vests": "Sweater vests",
+        "sweatshirts": "Sweatshirts",
+        "swimwear": "Swimwear",
+        "t_shirts": "T-shirts",
+        "tops": "Tops",
+        "tote_bags_shoppers": "Tote bags and shoppers",
+        "towels": "Towels",
+        "track_jackets": "Track jackets",
+        "trays": "Trays",
+        "underwear": "Underwear",
+        "various": "Various",
+        "vests": "Vests",
+        "wallets_cases": "Wallets and cases",
+        "windbreaker": "Windbreaker"
+      },
+      "product_filter_color": {
+        "beige": "beige",
+        "black": "black",
+        "blue": "blue",
+        "brown": "brown",
+        "camouflage": "camouflage",
+        "gold": "gold",
+        "gray": "gray",
+        "green": "green",
+        "purple": "purple",
+        "multicolored": "multicolored",
+        "olive": "olive",
+        "orange": "orange",
+        "petrol": "petrol",
+        "pink": "pink",
+        "red": "red",
+        "silver": "silver",
+        "transparent": "transparent",
+        "turquoise": "turquoise",
+        "violet": "violet",
+        "white": "white",
+        "yellow": "yellow",
+        "bronze-copper": "bronze-copper"
+      }
+    },
+    "sorting": {
+      "sort_by_label": "Sort by"
+    },
+    "inventory": {
+      "in_stock": "In stock",
+      "low_stock": "Low stock",
+      "only_x_left": "{{ quantity }} in stock",
+      "x_left": "{{ quantity }} in stock, ready to ship"
+    },
+    "transfers": {
+      "will_not_ship_until": "Ships {{ date }}",
+      "will_be_in_stock_after": "In stock after {{ date }}",
+      "waiting_for_stock": "More stock coming soon"
+    },
+    "variant": {
+      "no_stock": "Sold out",
+      "non_existent": "Unavailable"
+    }
+  },
+  "sections": {
+    "header": {
+      "account": "Account",
+      "search": "Search",
+      "cart": "Cart"
+    },
+    "footer": {
+      "copyright_html": "&copy; {{ year }} <a href=\"{{ shop_url }}\">{{ shop_name }}</a>."
+    },
+    "faq_header": {
+      "search_label": "Search FAQ",
+      "search_placeholder": "Search FAQ"
+    },
+    "collection": {
+      "empty": "No products found",
+      "product_count": {
+        "one": "{{ count }} product",
+        "other": "{{ count }} products"
+      },
+      "grid_layout": "Grid",
+      "list_layout": "List",
+      "view_all_related_collections": "View all...",
+      "featured_sort_title": "Newest"
+    },
+    "countdown": {
+      "days_short": "Days",
+      "hours_short": "Hours",
+      "minutes_short": "Minutes",
+      "seconds_short": "Seconds",
+      "end_date": "Ends {{ date }}"
+    },
+    "featured_collection": {
+      "view_all": "View all"
+    },
+    "slideshow": {
+      "load_slide": "Load slide",
+      "carousel": "Carousel",
+      "slide": "Slide"
+    }
+  },
+  "templates": {
+    "404": {
+      "title": "Page not found",
+      "subtext": "Sorry, the page you requested does not exist.",
+      "link": "Back to home"
+    },
+    "password": {
+      "general": {
+        "login_link": "Enter using password",
+        "powered_by": "This shop will be powered by"
+      },
+      "login_form": {
+        "admin_link_html": "Are you the store owner? <a href=\"/admin\">Log in here</a>",
+        "error": "Incorrect password",
+        "heading": "Enter store using password",
+        "password_label": "Password",
+        "password_placeholder": "Password",
+        "submit": "Enter"
+      },
+      "signup_form": {
+        "email_label": "Email",
+        "email_placeholder": "Your email",
+        "submit": "Submit",
+        "success": "Thank you for your interest. We'll be sure to keep you up to date."
+      }
+    }
+  },
+  "newsletter": {
+    "label": "Email",
+    "placeholder": "Your email",
+    "button_label": "Subscribe",
+    "success": "Thank you for subscribing."
+  },
+  "contact": {
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "send": "Send",
+      "post_success": "Thanks for contacting us. We'll get back to you as soon as possible."
+    }
+  },
+  "blogs": {
+    "article": {
+      "back_to_blog": "Back to {{ title }}",
+      "no_matches": "You don't have any articles yet! Once you've written one, it will show up here.",
+      "read_more": "Read more"
+    },
+    "comments": {
+      "title": "Comments",
+      "form_title": "Leave a comment",
+      "name": "Name",
+      "email": "Email",
+      "message": "Comment",
+      "post": "Post comment",
+      "moderated": "Please note: comments must be approved before they are published.",
+      "success": "Your comment was posted successfully! Thank you!"
+    },
+    "filtering": {
+      "all": "All",
+      "filter_by": "Filter by"
+    },
+    "pagination": {
+      "newer_articles": "Newer articles",
+      "older_articles": "Older articles"
+    },
+    "tags": {
+      "label": "Tagged"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Your cart",
+      "backorder": "Product is backordered and will ship as soon as it is back in stock.",
+      "free_shipping": "Your order is eligible for free shipping!",
+      "free_shipping_deficit_html": "Spend <strong>{{ amount }}</strong> more for <strong>free shipping</strong>!",
+      "taxes_and_shipping_at_checkout": "Taxes and shipping calculated at checkout.",
+      "taxes_and_shipping_at_checkout_html": "Taxes and <a href=\"{{ link }}\">shipping</a> calculated at checkout.",
+      "taxes_included_shipping_at_checkout": "Tax included, shipping calculated at checkout.",
+      "taxes_included_shipping_at_checkout_html": "Tax included, <a href=\"{{ link }}\">shipping</a> calculated at checkout.",
+      "update": "Update cart",
+      "discount-code-info_html": "<strong>Note:</strong> Discount codes can be added at checkout.",
+      "money-saved": "You saved:"
+    },
+    "items": {
+      "product": "Product",
+      "quantity": "Quantity",
+      "increase_quantity": "Increase quantity",
+      "decrease_quantity": "Decrease quantity",
+      "price": "Price",
+      "remove": "Remove",
+      "total": "Subtotal",
+      "quantity_error": "You can only add {{ quantity }} of this item to your cart."
+    },
+    "note": {
+      "label": "Order note"
+    },
+    "shipping_calculator": {
+      "show": "Estimate shipping",
+      "hide": "Hide shipping calculator",
+      "title": "Estimate shipping",
+      "country": "Country",
+      "province": "Province",
+      "zip": "Zip/Postal Code",
+      "submit": "Calculate",
+      "single_rate": "There is one shipping rate for this destination:",
+      "multiple_rates": "There are multiple shipping rates for this destination:",
+      "no_rates": "We do not ship to this destination.",
+      "error": "Please correct the following errors:"
+    },
+    "summary": {
+      "subtotal": "Subtotal",
+      "checkout": "Checkout",
+      "continue_shopping": "Continue shopping"
+    },
+    "terms": {
+      "agreement_html": "I agree to the <a href=\"{{ terms_url }}\" target=\"_blank\">general terms & conditions and the refund policy</a>",
+      "confirmation": "You must agree to the terms & conditions and refund policy before continuing."
+    }
+  },
+  "customer": {
+    "account": {
+      "title": "Account",
+      "view_addresses": "View addresses",
+      "home": "Account home",
+      "log_out": "Log out"
+    },
+    "activate_account": {
+      "title": "Activate account",
+      "subtext": "Create your password to activate your account.",
+      "password": "Password",
+      "password_confirm": "Confirm password",
+      "submit": "Activate account",
+      "cancel": "Decline invitation"
+    },
+    "addresses": {
+      "title": "Addresses",
+      "default": "Default",
+      "edit": "Edit",
+      "edit_address": "Edit address",
+      "delete": "Delete",
+      "delete_confirm": "Are you sure you wish to delete this address?",
+      "add_new": "Add a new address",
+      "first_name": "First name",
+      "last_name": "Last name",
+      "company": "Company",
+      "address1": "Address 1",
+      "address2": "Address 2",
+      "city": "City",
+      "country": "Country",
+      "province": "Province",
+      "zip": "Postal/Zip code",
+      "phone": "Phone",
+      "set_default": "Set as default address",
+      "add": "Add address",
+      "update": "Update address",
+      "cancel": "Cancel"
+    },
+    "login": {
+      "title": "Login",
+      "email": "Email",
+      "password": "Password",
+      "forgot_password": "Forgot password",
+      "sign_in": "Sign in",
+      "guest_title": "Continue as a guest",
+      "guest_continue": "Continue"
+    },
+    "order": {
+      "title": "Order {{ name }}",
+      "date": "Placed on {{ date }}",
+      "cancelled_on": "Order cancelled on {{ date }}",
+      "cancelled_reason": "Reason: {{ reason }}",
+      "billing_address": "Billing address",
+      "payment_status": "Payment status",
+      "fulfillment_status": "Fulfillment status",
+      "fulfilled_on": "Fulfilled {{ date }}",
+      "shipping": "Shipping",
+      "shipping_address": "Shipping address",
+      "product": "Product",
+      "sku": "SKU",
+      "quantity": "Quantity",
+      "price": "Price",
+      "subtotal": "Subtotal",
+      "tax": "Tax",
+      "total": "Total",
+      "raffle": {
+        "cancel_button": "Cancel raffle participation",
+        "cancel_success": "Raffle entry successfully cancelled",
+        "errors": {
+          "no_cancellation": "Raffle entry is not open for cancellation",
+          "entry_not_found": "Raffle entry not found",
+          "general_error": "An error occurred, please try again later",
+          "unauthorized": "Unauthorized"
+        },
+        "winner": "Winner",
+        "loser": "Loser"
+      }
+    },
+    "orders": {
+      "order_number": "Order",
+      "view_order": "View order",
+      "date": "Date",
+      "payment_status": "Payment status",
+      "fulfillment_status": "Fulfillment Status",
+      "total": "Total",
+      "none": "You haven't placed any orders yet."
+    },
+    "recover_password": {
+      "title": "Reset your password",
+      "subtext": "We will send you an email to reset your password.",
+      "email": "Email",
+      "submit": "Submit",
+      "cancel": "Cancel",
+      "success": "We've sent you an email with a link to update your password."
+    },
+    "register": {
+      "title": "Create account",
+      "first_name": "First name",
+      "last_name": "Last name",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Create account",
+      "have_account": "Already have an account?",
+      "log_in": "Log in here"
+    },
+    "reset_password": {
+      "title": "Reset Password",
+      "subtext": "Enter a new password for {{ email }}",
+      "password": "Password",
+      "password_confirm": "Confirm Password",
+      "submit": "Reset password"
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "title": "Here's your {{ value }} gift card for {{ shop }}!",
+      "subtext": "Here's your gift card!",
+      "expired": "Expired on {{ expiry }}",
+      "remaining_html": "{{ balance }} left",
+      "qr_image_alt": "QR code — scan to redeem gift card",
+      "code": "Gift card code",
+      "add_to_apple_wallet": "Add to Apple Wallet",
+      "shop_link": "Start shopping",
+      "print": "Print"
+    },
+    "recipient": {
+      "checkbox": "I want to send this as a gift",
+      "email_label_optional": "Recipient email",
+      "email_label_required": "Recipient email *",
+      "name_label": "Recipient name",
+      "message_label": "Message",
+      "max_characters": "{{ max_chars }} characters max",
+      "send_on_label": "Send on"
+    }
+  },
+  "onboarding": {
+    "article": {
+      "title": "Blog post",
+      "excerpt": "Give your customers a summary of your blog post.",
+      "author": "Author name"
+    },
+    "blog": {
+      "empty": "You don't have any articles yet! Once you've written one, it will show up here."
+    },
+    "collection": {
+      "title": "Collection"
+    },
+    "product": {
+      "title": "Product title",
+      "vendor": "Product vendor",
+      "sku": "SKU1234",
+      "description": "A description of the product, including details such as build quality, materials used and reasons to purchase."
+    }
+  },
+  "shopify": {
+    "checkout": {
+      "contact": {
+        "address1_label": "Address / Packstation and Number (DE only)",
+        "optional_address2_label": "Optional: Your DHL Postnummer (8-10 characters), Apartment, Suite, etc."
+      },
+      "marketing": {
+        "accept_marketing_checkbox_label": "I want to receive Overkill's updates on news, offers and vouchers via email (unsubscribe anytime)."
+      },
+      "thank_you": {
+        "return_to_store_link_label": "CONTINUE SHOPPING",
+        "customer_information_title": "ORDER DETAILS",
+        "thank_you_title": "WE RECEIVED YOUR ORDER"
+      }
+    }
+  },
+  "customer_accounts": {
+    "order_details": {
+      "marketing_checkbox_label": "I want to receive Overkill's updates on news, offers and vouchers via email (unsubscribe anytime)."
+    }
+  },
+  "bpi": {
+    "content": "30-Day Best Price*: {{ price }}"
+  }
+}

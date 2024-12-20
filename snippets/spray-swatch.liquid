@@ -1,0 +1,33 @@
+{% assign color_value = variant.option1 %}
+
+{% assign handleize_color = color_value | handleize %}
+
+
+      <div class="grid grid-cols-swatches swatch-grid {% unless variant.available %}is-unavailable{% endunless %}" >
+          <div>
+            <div data-color="{{ color_value }}" style="--spraycolor:var(--{{ handleize_color }})" class="spray-swatch"></div>
+          </div>
+          <div class="label">{{ color_value }}</div>
+          <div>
+            <quantity-wrapper data-variant="{{variant.id}}" class="quantity-wrapper">
+              <a href="#" data-quantity="down" aria-label="{{ 'cart.items.decrease_quantity' | t }}">
+                {%- render 'icon-minus' -%}
+              </a>
+              <input
+                aria-label="{{ 'products.product.quantity' | t }}"
+                id="quantity"
+                type="number"
+                name="quantity"
+                {% unless variant.available %}
+                  disabled
+                {% endunless %}
+                min='0'
+                max="{{ variant.inventory_quantity }}"
+                value="0"
+              >
+              <a href="#" data-quantity="up" aria-label="{{ 'cart.items.increase_quantity' | t }}">
+                {%- render 'icon-plus' -%}
+              </a>
+            </quantity-wrapper>
+          </div>
+        </div>

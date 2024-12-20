@@ -1,0 +1,23 @@
+{% liquid
+    for item in product.variants
+        if item.quantity_rule.min != null
+            assign quantity-min = item.quantity_rule.min
+        else
+            assign quantity-min = 1
+        endif
+        if item.quantity_rule.max != null
+            assign quantity-max = item.quantity_rule.max
+        elsif current_variant.inventory_quantity != null
+            assign quantity-max = current_variant.inventory_quantity
+        elsif item.inventory_quantity != null
+            assign quantity-max = item.inventory_quantity
+        endif
+    endfor
+%}
+<script src="{{ 'quantity-field.js' | asset_url }}" defer></script>
+<label class="label" for="quantity">{{ 'products.product.quantity' | t }}</label>
+<quantity-field class="quantity-wrapper">
+    <button class="quantity-button" name="minus" data-quantity="down" aria-label="{{ 'cart.items.decrease_quantity' | t }}">{% render 'icon-minus' %}</button>
+    <input aria-label="{{ 'products.product.quantity' | t }}" id="quantity" type="number" name="quantity" min="{{ quantity-min }}" max="{{ quantity-max }}" value="1" />   
+    <button class="quantity-button" name="plus" data-quantity="up" aria-label="{{ 'cart.items.increase_quantity' | t }}">{% render 'icon-plus' %}</button>
+</quantity-field>

@@ -1,0 +1,204 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "disabled": true,
+      "settings": {
+        "show_date": false,
+        "show_author": false,
+        "show_article_tags": true,
+        "show_sharing_icons": false,
+        "show_twitter": false,
+        "show_facebook": true,
+        "show_pinterest": true,
+        "show_featured_image": true,
+        "full_width_image": true,
+        "featured_image_height": "huge",
+        "enable_title_overlay": false,
+        "overlay_style": "shadow"
+      }
+    },
+    "rich_text_3YdLtm": {
+      "type": "rich-text",
+      "blocks": {
+        "text_PGmjVH": {
+          "type": "text",
+          "settings": {
+            "text": "<h1><strong>OUTFITS FOR TRANSITIONAL SEASON</strong></h1>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "text_PGmjVH"
+      ],
+      "settings": {
+        "height": "medium",
+        "text_alignment": "center",
+        "full_width": false,
+        "color_scheme": "default"
+      }
+    },
+    "rich_text_mUnWNK": {
+      "type": "rich-text",
+      "blocks": {
+        "button_tBcFKG": {
+          "type": "button",
+          "settings": {
+            "button_label": "BUY APPAREL",
+            "button_link": "shopify://collections/apparel-men",
+            "button_style": "primary"
+          }
+        },
+        "image_tnzxEz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/overkill_laydowns_autumn_perfomans_classic_2.webp",
+            "image_width": 700,
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "button_tBcFKG",
+        "image_tnzxEz"
+      ],
+      "settings": {
+        "height": "small",
+        "text_alignment": "center",
+        "full_width": false,
+        "color_scheme": "default"
+      }
+    },
+    "product_list_LHB69a": {
+      "type": "product-list",
+      "settings": {
+        "title": "Outfit I",
+        "product_list": [
+          "ka-yo-prototype-insulation-vest-80016-250-green-forest",
+          "ka-yo-prototype-windbreaker-jkt-reflective-80031-618-nougat",
+          "nike-acg-uv-hike-pant-fn2450-247-khaki-light-iron-ore-summit-white",
+          "nike-acg-smith-summit-cargo-pant-fn0428-010-black-anthracite-summit-white",
+          "nike-acg-oregon-series-reissue-polartec-top-dv9220-325-cargo-khaki-schwarz-wolf-grey",
+          "the-north-face-freedom-fleece-balaclava-black",
+          "the-north-face-dock-worker-recycled-beanie-nf0a3fntdyx1-fff-tnf-black",
+          "the-north-face-92-retro-cap-nf0a7wiqrv8-new-taupe-green-summit-navy-tnf-black",
+          "mizuno-wave-prophecy-ls-d1ga333701-black"
+        ],
+        "show_vendor": false,
+        "enable_carousel": true,
+        "grid": 4,
+        "color_scheme": "default",
+        "full_width": true
+      }
+    },
+    "rich_text_UMCqx7": {
+      "type": "rich-text",
+      "blocks": {
+        "image_EmGAQe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/overkill_laydowns_autumn_perfomans_classic_3.webp",
+            "image_width": 700,
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_EmGAQe"
+      ],
+      "settings": {
+        "height": "medium",
+        "text_alignment": "center",
+        "full_width": false,
+        "color_scheme": "default"
+      }
+    },
+    "product_list_ywn79t": {
+      "type": "product-list",
+      "settings": {
+        "title": "OUTFIT II",
+        "product_list": [
+          "c-p-company-d-d-shell-goggle-down-vest-17cmow074a006099a-999-black",
+          "ka-yo-prototype-waffle-thermal-sweater-80030-126-peyote",
+          "carhartt-wip-chase-sweat-i033660-00j-xx-03-ash-heather-gold",
+          "columbia-landroamer-quilted-shirt-jacket-2054721010-black",
+          "dickies-loose-multi-pocket-workpant-dk0a863nmr11-brown",
+          "parra-fancy-logo-6-panel-hat-52360-brown",
+          "obey-pigment-lowercase-6-panel-stra-100580367-blk-pigment-black",
+          "merrell-ontario-sp-lace-se-j006737-aluminum",
+          "ucon-acrobatics-jannik-medium-pannier-127412li53-124-lotus-infinity-sand",
+          "c-p-company-nylon-b-crossbody-pack-17cmac112a-005269g-683-ivy-green",
+          "carhartt-wip-chispa-lamp-by-joan-gasper-i032067-1ny-xx-06-yucca-black"
+        ],
+        "show_vendor": false,
+        "enable_carousel": true,
+        "grid": 4,
+        "color_scheme": "default",
+        "full_width": true
+      }
+    },
+    "rich_text_y8CPkL": {
+      "type": "rich-text",
+      "blocks": {
+        "image_a7Vwiq": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/overkill_laydowns_autumn_perfomans_classic.webp",
+            "image_width": 700,
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_a7Vwiq"
+      ],
+      "settings": {
+        "height": "medium",
+        "text_alignment": "center",
+        "full_width": false,
+        "color_scheme": "default"
+      }
+    },
+    "product_list_BHpmaD": {
+      "type": "product-list",
+      "settings": {
+        "title": "OUTFIT III",
+        "product_list": [
+          "fred-perry-the-caban-jacket-j8535-102-black",
+          "fred-perry-classic-beanie-c8161-w50-porridge-anchor-grey",
+          "fred-perry-waffle-stitch-half-zip-jumper-k8557-102-black",
+          "fred-perry-crew-neck-sweatshirt-m7535-w50-porridge-marl-anchor-grey",
+          "fred-perry-plain-fred-perry-shirt-m6000-w50-porridge-marl-anchor-grey",
+          "edmmond-studios-jorge-pants-324-50-02680-plain-khaki",
+          "carhartt-wip-landon-pant-i032297-2fs-02-00-peanut-rinsed",
+          "dr-martens-zeffir-3i-31916779-black-beige-buttero-hair-on"
+        ],
+        "show_vendor": false,
+        "enable_carousel": true,
+        "grid": 4,
+        "color_scheme": "default",
+        "full_width": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_3YdLtm",
+    "rich_text_mUnWNK",
+    "product_list_LHB69a",
+    "rich_text_UMCqx7",
+    "product_list_ywn79t",
+    "rich_text_y8CPkL",
+    "product_list_BHpmaD"
+  ]
+}
