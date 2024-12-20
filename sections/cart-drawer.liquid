@@ -42,9 +42,9 @@
   {% endif %}
 {%- endcapture -%}
 
-<script src="{{ 'cart-drawer.js' | asset_url }}" defer></script>
+<script type="lazyJs" src="{{ 'cart-drawer.js' | asset_url }}"></script>
 {%- if section.settings.show_order_note -%}
-  <script src="{{ 'cart-note.js' | asset_url }}" defer="defer"></script>
+  <script type="lazyJs" src="{{ 'cart-note.js' | asset_url }}"></script>
 {%- endif -%}
 
 <cart-drawer class="drawer fixed top-0 right-0 flex flex-col w-full has-motion js-cart-drawer" role="dialog" tabindex="-1" aria-labelledby="CartDrawerModal-Title" aria-modal="true" aria-hidden="true" data-name="cart-drawer" data-section-id="{{ section.id }}">

@@ -14,7 +14,7 @@
         endif
     endfor
 %}
-<script src="{{ 'quantity-field.js' | asset_url }}" defer></script>
+<script type="lazyJs" src="{{ 'quantity-field.js' | asset_url }}"></script>
 <label class="label" for="quantity">{{ 'products.product.quantity' | t }}</label>
 <quantity-field class="quantity-wrapper">
     <button class="quantity-button" name="minus" data-quantity="down" aria-label="{{ 'cart.items.decrease_quantity' | t }}">{% render 'icon-minus' %}</button>

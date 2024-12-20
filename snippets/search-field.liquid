@@ -1,4 +1,8 @@
-<link rel="stylesheet" href="{{ 'search-field.css' | asset_url }}">
+{% if template contains 'index' or template contains 'collection' %}
+    <link rel="stylesheet" data-href="{{ 'search-field.css' | asset_url }}">
+{% else %}  
+    <link rel="stylesheet" href="{{ 'search-field.css' | asset_url }}">
+{% endif %}
 <div class="search-field">
   <a
     class="show-search-link"

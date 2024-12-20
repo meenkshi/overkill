@@ -72,7 +72,7 @@
 -%}
 
 {%- if product.media.size > 1 -%}
-  <script src="{{ 'slideshow.js' | asset_url }}" defer></script>
+  <script type="lazyJs" src="{{ 'slideshow.js' | asset_url }}"></script>
 {%- endif -%}
 <link rel="stylesheet" href="{{ 'modal.css' | asset_url }}">
 <link rel="stylesheet" href="{{ 'pdp.css' | asset_url }}">
@@ -1056,7 +1056,7 @@
 
                     {% if block.settings.multiple_style == 'dropdown' %}
                       <div class="option-selector option-selector--custom" data-selector-type="dropdown">
-                        <script src="{{ 'custom-select.js' | asset_url }}" defer></script>
+                        <script type="lazyJs" src="{{ 'custom-select.js' | asset_url }}"></script>
                         {% render 'custom-select',
                           id: custom_option_input_id,
                           label: block.settings.label,
@@ -1621,7 +1621,7 @@
                 endif
               -%}
               {%- if end_date > now or hide_on_end == false -%}
-                <script src="{{ 'countdown-timer.js' | asset_url }}" defer></script>
+                <script type="lazyJs" src="{{ 'countdown-timer.js' | asset_url }}"></script>
                 <div
                   class="product-info-block text-box text-box--block align-center countdown-font-{{ block.settings.number_font }} countdown-divider-{{ block.settings.divider_type }}"
                   style="--box-color: {{ block.settings.box_color }}; --box-text-color: {{ block.settings.text_color | color_to_rgb | split: '(' | last | split: ')' | first }}"
@@ -1703,7 +1703,7 @@
                     </div>
                   {%- endunless -%}
                   {%- if release_end_date > now -%}
-                    <script src="{{ 'countdown-timer.js' | asset_url }}" defer></script>
+                    <script src="{{ 'countdown-timer.js' | asset_url }}" type="lazyJs"></script>
                     {% render 'countdown-timer',
                       end_date: release_end_date,
                       end_midnight: false,
@@ -1988,14 +1988,14 @@
 
 {% assign product_vendor = product.vendor | downcase %}
 {% if product_vendor contains "adidas" %}
-  <script type="text/javascript">
+  <script type="lazyJs">
       (function() { var s=document.createElement('script');
       s.async=true;s.className='demoup_stage1_script';
       s.src='//static.demoup.com/api/stages/11236/stage1.js?url='+encodeURI(document.URL);
       var m=document.getElementsByTagName('head')[0];m.parentNode.insertBefore(s, m);})();
     </script>
     <script
-      async
+       type="lazyJs"
       id='demoup_stage2_script'
       src='//static.demoup.com/overkillshop.com/stage2.min.js'></script>
 {% endif %}

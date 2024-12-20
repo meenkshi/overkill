@@ -13,7 +13,7 @@
   %}
 {% endcomment %}
 
-<script src="{{ 'custom-select.js' | asset_url }}" defer="defer"></script>
+<script type="lazyJs" src="{{ 'custom-select.js' | asset_url }}"></script>
 
 {%- liquid
   assign form_class = 'form localization'
@@ -134,7 +134,7 @@
   {%- endif -%}
 
   {%- if section.settings.enable_country_selector -%}
-    <script>
+    <script type="lazyJs">
       customElements.whenDefined('custom-select').then(() => {
         if (!customElements.get('country-selector')) {
           class CountrySelector extends customElements.get('custom-select') {
@@ -184,7 +184,7 @@
     </script>
   {%- endif -%}
 
-  <script>
+  <script type="lazyJs">
     document.getElementById('{{ id }}').addEventListener('change', (evt) => {
       const input = evt.target.previousElementSibling;
       if (input && input.tagName === 'INPUT') {

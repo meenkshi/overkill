@@ -6,7 +6,7 @@
   {% render 'pickup-availability', current_variant: current_variant %}
 {%- endcomment -%}
 
-<script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
+<script type="lazyJs" src="{{ 'pickup-availability.js' | asset_url }}"></script>
 
 {%- assign pick_up_availabilities = current_variant.store_availabilities | where: 'pick_up_enabled', true -%}
 

@@ -1,0 +1,25 @@
+<style>
+@font-face {
+    font-display: swap;
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(" {{ 'noto-sans-v35-latin-regular.woff2' | asset_url }}") format('woff2'); 
+}
+@font-face {
+    font-display: swap;
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url(" {{ 'noto-sans-v35-latin-700.woff2' | asset_url }}") format('woff2'); 
+}
+{% if template contains 'blog' or template contains 'article' or template contains 'collection' %}
+@font-face {
+    font-display: swap;
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: url(" {{ 'noto-sans-v35-latin-600.woff2' | asset_url }}") format('woff2'); 
+}
+{% endif %}
+</style>

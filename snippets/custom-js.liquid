@@ -1,0 +1,14 @@
+<script>
+    var site_nav_link_burger = true;        
+    var icon_menu = document.querySelector('button.mobile-nav-toggle[aria-label="Menu"]');        
+    document.addEventListener("DOMContentLoaded", function() {        
+        if(icon_menu){
+            icon_menu.addEventListener("click", function() {
+                if(site_nav_link_burger && !document.documentElement.classList.contains('jsload')) {
+                    event.preventDefault();
+                    site_nav_link_burger = false;
+                }
+            });
+        }                
+    })
+</script>

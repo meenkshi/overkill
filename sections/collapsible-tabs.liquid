@@ -6,7 +6,11 @@
 %}
 
 {% if show_section %}
-  <link rel="stylesheet" href="{{ 'collapsible-tabs.css' | asset_url }}" {%- render 'lazy-stylesheet-attrs' %}>
+  {% if template contains 'index' or template contains 'collection' %}
+      <link rel="stylesheet" data-href="{{ 'collapsible-tabs.css' | asset_url }}">
+  {% else %}  
+      <link rel="stylesheet" href="{{ 'collapsible-tabs.css' | asset_url }}" {%- render 'lazy-stylesheet-attrs' %}>
+  {% endif %}
   <div class="container" data-cc-animate>
     <div class="collapsible-tabs">
       {% if section.settings.title != blank %}

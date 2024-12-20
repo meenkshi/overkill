@@ -47,7 +47,7 @@
 </div>
 
 
-{% javascript %}
+<script type="lazyJs">
 var loadProductRecommendationsIntoSection = function() {
   // Look for an element with class 'related-products'
   var productRecommendationsSection = document.querySelector(".related-products");
@@ -72,7 +72,7 @@ document.addEventListener("shopify:section:load", function(event) {
 });
 // Fetching the recommendations on page load
 loadProductRecommendationsIntoSection();
-{% endjavascript %}
+</script>
 
 
 {% schema %}

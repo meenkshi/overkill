@@ -1,5 +1,5 @@
 {%- if section.blocks.size > 1 -%}
-  <script src="{{ 'slideshow.js' | asset_url }}" defer></script>
+  <script type="lazyJs" src="{{ 'slideshow.js' | asset_url }}"></script>
 {%- endif -%}
 
 <div id="section-id-{{ section.id }}" {% if section.settings.section_animation_enabled %}data-cc-animate data-cc-animate-delay="0.2s"{% endif %}> 

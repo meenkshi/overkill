@@ -29,7 +29,11 @@
     }
   {%- endif -%}
 {% endstyle %}
-{{ 'latori-header-style.css' | asset_url | stylesheet_tag }}
+{% if template contains 'index' or template contains 'collection' %}
+    <link rel="stylesheet" data-href="{{ 'latori-header-style.css' | asset_url }}">
+{% else %}  
+    {{ 'latori-header-style.css' | asset_url | stylesheet_tag }}
+{% endif %}  
 
 {%- if template == 'gift_card' -%}
 
@@ -69,7 +73,7 @@
 -%}
 
   {%- if has_countdown -%}
-    <script src="{{ 'countdown-timer.js' | asset_url }}" defer></script>
+    <script type="lazyJs" src="{{ 'countdown-timer.js' | asset_url }}"></script>
   {%- endif -%}
   <page-header data-section-id="{{ section.id }}" data-cc-animate>
     <div id="pageheader" class="pageheader pageheader--layout-{{ section.settings.menu_layout }}{% if section.settings.enable_transparent and template.name == 'index' %} pageheader--transparent-permitted pageheader--transparent{% endif %}{% if section.settings.enable_sticky %} pageheader--sticky{% endif %}">
@@ -235,7 +239,7 @@
           assign show_search_recommendations = true
         endif
       -%}
-        <script src="{{ 'main-search.js' | asset_url }}" defer></script>
+        <script type="lazyJs" src="{{ 'main-search.js' | asset_url }}"></script>
         <main-search
           class="main-search {% if show_search_recommendations %}main-search--with-suggestions{% endif %}"
           data-quick-search="{{ settings.enable_quick_header_search }}"
@@ -263,7 +267,7 @@
                   aria-label="{{ 'general.search.submit' | t }}">{% render 'icon-search' %}</button>
               </div>
               {%- if settings.show_search_suggestions -%}
-                <script src="{{ 'search-suggestions.js' | asset_url }}" defer></script>
+                <script type="lazyJs" src="{{ 'search-suggestions.js' | asset_url }}"></script>
                 <search-suggestions></search-suggestions>
               {%- endif -%}
             </form>

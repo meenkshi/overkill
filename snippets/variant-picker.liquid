@@ -14,12 +14,12 @@
 {% endcomment %}
 
 {%- unless product.has_only_default_variant -%}
-  <script src="{{ 'variant-picker.js' | asset_url }}" defer></script>
+  <script type="lazyJs" src="{{ 'variant-picker.js' | asset_url }}"></script>
 
   {%- if product.variants.size > 1 or block.settings.show_single -%}
 
     {%- if block.settings.selector_style == 'dropdown' -%}
-      <script src="{{ 'custom-select.js' | asset_url }}" defer></script>
+      <script type="lazyJs" src="{{ 'custom-select.js' | asset_url }}"></script>
     {%- endif -%}
 
     {%- liquid

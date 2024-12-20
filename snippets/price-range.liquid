@@ -7,8 +7,13 @@
   	assign uses_comma_decimals = true
   endif
 -%}
-<link rel="stylesheet" href="{{ 'price-range.css' | asset_url }}">
-<script src="{{ 'price-range.js' | asset_url }}" defer></script>
+{% if template contains 'index' or template contains 'collection' %}
+    <link rel="stylesheet" data-href="{{ 'price-range.css' | asset_url }}">
+{% else %}  
+    <link rel="stylesheet" href="{{ 'price-range.css' | asset_url }}">
+{% endif %}  
+
+<script type="lazyJs" src="{{ 'price-range.js' | asset_url }}"></script>
 <price-range class="cc-price-range">
   <div class="cc-price-range__input-row">
     <div class="cc-price-range__input-container">

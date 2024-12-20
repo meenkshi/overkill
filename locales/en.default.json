@@ -1,7 +1,16 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin language editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "general": {
     "localization": {
-      "country_label": "Country/Region",
+      "country_label": "Country\/Region",
       "countries_error": "Error fetching countries, please try again.",
       "language_label": "Language",
       "update": "Update"
@@ -74,7 +83,7 @@
     "meta_html": "Order {{ brand }} {{ product_title }} | {{ manufacturer_sku }} | {{ color }} at OVERKILL now - ✓ Free shipping in Germany from 80 € ✓ Free returns in Germany from 40 €",
     "product": {
       "add_to_cart": "Add to cart",
-      "added_to_cart_with_link_html": "Added to your <a href=\"{{ cart_url }}\">Cart</a>",
+      "added_to_cart_with_link_html": "Added to your <a href=\"{{ cart_url }}\">Cart<\/a>",
       "backorder": "is backordered and will ship as soon as it is back in stock.",
       "barcode": "Barcode:",
       "choose_a": "Choose a",
@@ -95,9 +104,9 @@
       "pickup_availability": {
         "check_other_stores": "Check availability at other stores",
         "pick_up_available": "Pickup available",
-        "pick_up_available_at_html": "Pickup available at <strong>{{ location_name }}</strong>",
+        "pick_up_available_at_html": "Pickup available at <strong>{{ location_name }}<\/strong>",
         "pick_up_unavailable": "Pickup currently unavailable",
-        "pick_up_unavailable_at_html": "Pickup currently unavailable at <strong>{{ location_name }}</strong>",
+        "pick_up_unavailable_at_html": "Pickup currently unavailable at <strong>{{ location_name }}<\/strong>",
         "refresh": "Refresh",
         "unavailable": "Couldn't load pickup availability",
         "view_store_info": "View store information",
@@ -107,7 +116,7 @@
       "prev_product": "Previous",
       "price": {
         "unit_price": "Unit price",
-        "unit_price_separator": " / "
+        "unit_price_separator": " \/ "
       },
       "product_variants": "Product variants",
       "quantity": "Quantity",
@@ -117,7 +126,7 @@
         "other": "{{ count }} reviews"
       },
       "sale": "Sale",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Shipping</a> calculated at checkout.",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Shipping<\/a> calculated at checkout.",
       "size_chart": "Size guide",
       "sku": "SKU",
       "sold_out": "Sold out",
@@ -151,8 +160,8 @@
       "dimensions": "Dimensions",
       "shipping_info": "Shipping",
       "raffle_release": "Raffle Release",
-      "raffle_disclaimer_html": "<b>PLEASE NOTE</b> <p>If you add a Raffle product to your shopping cart, you will lose the other products in it.</p> <p>You can only participate in a raffle using <b>PayPal as your payment method</b>.</p> <p>For participation in the Raffle, the order <b>amount will be reserved on your PayPal account</b> until the Raffle ends and collected if you win.</p> <p>If you do not win, the reserved <b>amount will be automatically released</b> after the draw (usually within 24 hours; in exceptional cases this may be delayed by up to a maximum of 2 working days (Monday - Friday, excluding public holidays).</p>",
-      "raffle_terms_html": "I confirm that I have read and understood all information regarding the <a href=\"/pages/raffle-drawing-process\">drawing process</a>.<br/>I agree to the <a href=\"/pages/raffle-conditions-of-participation\">conditions of participation</a>.",
+      "raffle_disclaimer_html": "<b>PLEASE NOTE<\/b> <p>If you add a Raffle product to your shopping cart, you will lose the other products in it.<\/p> <p>You can only participate in a raffle using <b>PayPal as your payment method<\/b>.<\/p> <p>For participation in the Raffle, the order <b>amount will be reserved on your PayPal account<\/b> until the Raffle ends and collected if you win.<\/p> <p>If you do not win, the reserved <b>amount will be automatically released<\/b> after the draw (usually within 24 hours; in exceptional cases this may be delayed by up to a maximum of 2 working days (Monday - Friday, excluding public holidays).<\/p>",
+      "raffle_terms_html": "I confirm that I have read and understood all information regarding the <a href=\"\/pages\/raffle-drawing-process\">drawing process<\/a>.<br\/>I agree to the <a href=\"\/pages\/raffle-conditions-of-participation\">conditions of participation<\/a>.",
       "raffle_add_to_cart": "Participate in the Raffle",
       "raffle_login": "Login to participate in the Raffle",
       "raffle_ended": "Raffle ended",
@@ -426,14 +435,14 @@
         "narrow_fit_birkenstock": "Narrow fit (Birkenstock)",
         "normal": "Normal",
         "1_size_smaller": "1 size smaller",
-        "1_2_size_smaller": "1/2 size smaller",
+        "1_2_size_smaller": "1\/2 size smaller",
         "2_sizes_bigger": "2 sizes bigger",
         "1_size_bigger": "1 size bigger",
-        "1_2_size_bigger": "1/2 size bigger",
+        "1_2_size_bigger": "1\/2 size bigger",
         "cropped_fit": "Cropped Fit",
         "boxy_fit": "Boxy Fit",
-        "small_fit_slim_fit": "Small fit / Slim fit",
-        "wide_fit_loose_fit": "Wide fit / Loose fit"
+        "small_fit_slim_fit": "Small fit \/ Slim fit",
+        "wide_fit_loose_fit": "Wide fit \/ Loose fit"
       },
       "product_filter_gender": {
         "men": "Men",
@@ -574,7 +583,7 @@
       "cart": "Cart"
     },
     "footer": {
-      "copyright_html": "&copy; {{ year }} <a href=\"{{ shop_url }}\">{{ shop_name }}</a>."
+      "copyright_html": "&copy; {{ year }} <a href=\"{{ shop_url }}\">{{ shop_name }}<\/a>."
     },
     "faq_header": {
       "search_label": "Search FAQ",
@@ -619,7 +628,7 @@
         "powered_by": "This shop will be powered by"
       },
       "login_form": {
-        "admin_link_html": "Are you the store owner? <a href=\"/admin\">Log in here</a>",
+        "admin_link_html": "Are you the store owner? <a href=\"\/admin\">Log in here<\/a>",
         "error": "Incorrect password",
         "heading": "Enter store using password",
         "password_label": "Password",
@@ -683,13 +692,13 @@
       "title": "Your cart",
       "backorder": "Product is backordered and will ship as soon as it is back in stock.",
       "free_shipping": "Your order is eligible for free shipping!",
-      "free_shipping_deficit_html": "Spend <strong>{{ amount }}</strong> more for <strong>free shipping</strong>!",
+      "free_shipping_deficit_html": "Spend <strong>{{ amount }}<\/strong> more for <strong>free shipping<\/strong>!",
       "taxes_and_shipping_at_checkout": "Taxes and shipping calculated at checkout.",
-      "taxes_and_shipping_at_checkout_html": "Taxes and <a href=\"{{ link }}\">shipping</a> calculated at checkout.",
+      "taxes_and_shipping_at_checkout_html": "Taxes and <a href=\"{{ link }}\">shipping<\/a> calculated at checkout.",
       "taxes_included_shipping_at_checkout": "Tax included, shipping calculated at checkout.",
-      "taxes_included_shipping_at_checkout_html": "Tax included, <a href=\"{{ link }}\">shipping</a> calculated at checkout.",
+      "taxes_included_shipping_at_checkout_html": "Tax included, <a href=\"{{ link }}\">shipping<\/a> calculated at checkout.",
       "update": "Update cart",
-      "discount-code-info_html": "<strong>Note:</strong> Discount codes can be added at checkout.",
+      "discount-code-info_html": "<strong>Note:<\/strong> Discount codes can be added at checkout.",
       "money-saved": "You saved:"
     },
     "items": {
@@ -711,7 +720,7 @@
       "title": "Estimate shipping",
       "country": "Country",
       "province": "Province",
-      "zip": "Zip/Postal Code",
+      "zip": "Zip\/Postal Code",
       "submit": "Calculate",
       "single_rate": "There is one shipping rate for this destination:",
       "multiple_rates": "There are multiple shipping rates for this destination:",
@@ -724,7 +733,7 @@
       "continue_shopping": "Continue shopping"
     },
     "terms": {
-      "agreement_html": "I agree to the <a href=\"{{ terms_url }}\" target=\"_blank\">general terms & conditions and the refund policy</a>",
+      "agreement_html": "I agree to the <a href=\"{{ terms_url }}\" target=\"_blank\">general terms & conditions and the refund policy<\/a>",
       "confirmation": "You must agree to the terms & conditions and refund policy before continuing."
     }
   },
@@ -759,7 +768,7 @@
       "city": "City",
       "country": "Country",
       "province": "Province",
-      "zip": "Postal/Zip code",
+      "zip": "Postal\/Zip code",
       "phone": "Phone",
       "set_default": "Set as default address",
       "add": "Add address",
@@ -885,7 +894,7 @@
   "shopify": {
     "checkout": {
       "contact": {
-        "address1_label": "Address / Packstation and Number (DE only)",
+        "address1_label": "Address \/ Packstation and Number (DE only)",
         "optional_address2_label": "Optional: Your DHL Postnummer (8-10 characters), Apartment, Suite, etc."
       },
       "marketing": {
@@ -902,8 +911,5 @@
     "order_details": {
       "marketing_checkbox_label": "I want to receive Overkill's updates on news, offers and vouchers via email (unsubscribe anytime)."
     }
-  },
-  "bpi": {
-    "content": "30-Day Best Price*: {{ price }}"
   }
 }

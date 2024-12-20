@@ -579,10 +579,13 @@ assign disable_buy_button_only = disable_buy_button_only | default: false
         
         {%- if product_block_sizechart != blank -%}
           <div class="product-size-options">
-            {%  unless no_quick_buy and disable_buy_button_only %} 
+            {%-  unless no_quick_buy and disable_buy_button_only -%} 
               {{ quickbuy_button }}
-            {% endunless %} 
+            {%- endunless -%} 
+            {% capture 'product-block-sizechart' %}
             {{ product_block_sizechart }}
+            {% endcapture %}
+            {{ product-block-sizechart | strip }}
           </div>
         {%- endif-%}
       </div>

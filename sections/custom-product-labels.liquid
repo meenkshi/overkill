@@ -1,6 +1,10 @@
-{% if section.blocks.size > 0 %}
-  {{ 'custom-product-labels.css' | asset_url | stylesheet_tag }}
-  <script src="{{ 'custom-product-labels.js' | asset_url }}" defer></script>
+{% if section.blocks.size > 0 %}  
+  {% if template contains 'index' or template contains 'collection' %}
+      <link rel="stylesheet" data-href="{{ 'custom-product-labels.css' | asset_url }}">
+  {% else %}  
+      {{ 'custom-product-labels.css' | asset_url | stylesheet_tag }}
+  {% endif %}  
+  <script type="lazyJs" src="{{ 'custom-product-labels.js' | asset_url }}"></script>
   <style>
     {% for label in section.blocks %}
       
